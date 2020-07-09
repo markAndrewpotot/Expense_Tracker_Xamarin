@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Expense_Tracking_Xamarin.MainPage">
+    <Grid BackgroundColor="LightSeaGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+         <!-- Place new controls here -->
+        <Image
+            Grid.Column="1"
+            Grid.Row="1"
+            Source="ic_logo.png"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+        <Button
+            x:Name="SignupBtn"
+            Grid.Column="1"
+            Grid.Row="4"
+            Text="SIGN UP"
+            HorizontalOptions="FillAndExpand"
+            Clicked="SignupBtn_Clicked"/>
+        <Label
+            x:Name="LoginLbl"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Grid.Row="5"
+            Text="I already have an account"
+            TextColor="Blue"
+            TextDecorations="Underline"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="EndAndExpand">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+            </Label.GestureRecognizers>
+        </Label>
+    </Grid>
+</ContentPage>

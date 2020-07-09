@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Expense_Tracking_Xamarin.View.LoginPage">
+    <ContentPage.Content>
+        <FlexLayout
+            AlignContent="Center"
+            Direction="Column"
+            BackgroundColor="LightSeaGreen"
+            JustifyContent="SpaceEvenly">
+            <!-- new Controls here -->
+            <Image
+                Source="ic_logo"/>
+            <Entry
+                x:Name="EmailEntry"
+                Placeholder="Email"/>
+            <Entry
+                x:Name="PasswordEntry"
+                Placeholder="Password"
+                IsPassword="True"/>
+            <Button
+                x:Name="LoginBtn"
+                Text="LOGIN"/>
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>
