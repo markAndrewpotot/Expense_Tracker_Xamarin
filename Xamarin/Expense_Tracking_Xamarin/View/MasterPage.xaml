@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Expense_Tracking_Xamarin.View.MasterPage">
+    <ContentPage.Content>
+        <FlexLayout
+            Direction="Column"
+            AlignContent="Center"
+            JustifyContent="SpaceEvenly"
+            BackgroundColor="#20B2AA">
+
+            <Button
+                Text="Home"
+                FontSize="Large"/>
+            <Button
+                Text="Record"
+                FontSize="Large"/>
+            <Button
+                Text="Logout"
+                FontSize="Large"/>
+
+        </FlexLayout>
+    </ContentPage.Content>
+</ContentPage>

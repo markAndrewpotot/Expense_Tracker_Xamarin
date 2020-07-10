@@ -2,7 +2,14 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
+    xmlns:local = "clr-namespace:Expense_Tracking_Xamarin"
     x:Class="Expense_Tracking_Xamarin.View.SignupPage">
+
+    <ContentPage.BindingContext>
+        <vm:RegistrationViewModel/>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <FlexLayout
             AlignContent="Center"
@@ -11,25 +18,24 @@
             BackgroundColor="LightSeaGreen">
             <!-- new controls here -->
             <Image
-                Source="ic_logo.png"/>
+                Source="{local:ImageResource Expense_Tracking_Xamarin.Images.app_icon.png}"/>
             <Entry
-                x:Name="NameEntry"
+                Text="{Binding name}"
                 Placeholder="Name"/>
             <Entry
-                x:Name="EmailEntry"
+                Text="{Binding email}"
                 Placeholder="Email"/>
             <Entry
-                x:Name="PasswordEntry"
+                Text="{Binding password}"
                 Placeholder="Password"
                 IsPassword="True"/>
             <Entry
-                x:Name="ConfirmPasswordEntry"
+                Text="{Binding confirmpassword}"
                 Placeholder="Confirm Password"
                 IsPassword="True"/>
             <Button
-                x:Name="SignupBtn"
+                Command="{Binding SignUp}"
                 Text="SIGN UP"/>
-
         </FlexLayout>
     </ContentPage.Content>
 </ContentPage>

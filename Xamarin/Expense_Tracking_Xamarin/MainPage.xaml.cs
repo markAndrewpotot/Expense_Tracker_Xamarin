@@ -22,11 +22,22 @@ namespace Expense_Tracking_Xamarin
         }
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoginPage());
+            var current = Connectivity.NetworkAccess;
+
+            if (current == NetworkAccess.Internet)
+                await Navigation.PushAsync(new LoginPage());
+            else
+                await DisplayAlert("No Internet Access", "Please Check the Network", "OK");
+            
         }
         private async void SignupBtn_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SignupPage());
+            var current = Connectivity.NetworkAccess;
+            if (current == NetworkAccess.Internet)
+                await Navigation.PushAsync(new SignupPage());
+            else
+                await DisplayAlert("No Internet Access", "Please Check the Network", "OK");
+            
         }
     }
 }

@@ -6,6 +6,8 @@ public class MonoPackageManager_Resources {
 		"Expense_Tracking_Xamarin.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.dll",
+		"System.Net.Http.Extensions.dll",
+		"System.Net.Http.Primitives.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

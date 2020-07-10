@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local = "clr-namespace:Expense_Tracking_Xamarin"
+             x:Class="Expense_Tracking_Xamarin.View.HomePage"
+             Title="Home">
+    <ContentPage.Content>
+        <Grid
+        BackgroundColor="LightSeaGreen">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="20"/>
+            <RowDefinition />
+            <RowDefinition Height="60"/>
+            <RowDefinition />
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+            <Image
+                Source="{local:ImageResource Expense_Tracking_Xamarin.Images.empty_icon.png}"
+                VerticalOptions="FillAndExpand"
+                Grid.Column="1"
+                Grid.Row="2"/>
+            <Label
+                Text="There are no records yet"
+                HorizontalOptions="Center"
+                FontSize="Small"
+                Grid.Column="1"
+                Grid.Row="3"/>
+            <Button
+                Text="Start Tracking"
+                FontSize="Large"
+                Grid.Column="1"
+                Grid.Row="5"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kk37/Desktop/Expense Tracking/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin.csproj": {}
+    "/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin.csproj": {}
   },
   "projects": {
-    "/Users/kk37/Desktop/Expense Tracking/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin.csproj": {
+    "/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kk37/Desktop/Expense Tracking/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin.csproj",
+        "projectUniqueName": "/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin.csproj",
         "projectName": "Expense_Tracking_Xamarin",
-        "projectPath": "/Users/kk37/Desktop/Expense Tracking/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin.csproj",
+        "projectPath": "/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin.csproj",
         "packagesPath": "/Users/kk37/.nuget/packages/",
-        "outputPath": "/Users/kk37/Desktop/Expense Tracking/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin/obj/",
+        "outputPath": "/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -39,6 +39,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.Net.Http": {
+              "target": "Package",
+              "version": "[2.2.29, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

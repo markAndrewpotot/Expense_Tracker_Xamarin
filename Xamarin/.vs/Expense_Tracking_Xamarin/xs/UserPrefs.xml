@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{3F13EAA1-ED1A-473E-8865-CA35EDFBD37E}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Expense_Tracking_Xamarin/NavigationMasterDetail.cs">
+    <Files>
+      <File FileName="Expense_Tracking_Xamarin/NavigationMasterDetail.cs" Line="17" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Expense_Tracking_Xamarin" expanded="True">
+            <Node name="Expense_Tracking_Xamarin" expanded="True">
+              <Node name="View" expanded="True" />
+              <Node name="NavigationMasterDetail.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Expense__Tracking__Xamarin.iOS Xamarin.HotReload.DebuggerTimeoutException.Expense__Tracking__Xamarin.iOS.HideInfoBar="True" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.95731915-BEDE-434B-BE01-2CF55B70453E" />
+  <MonoDevelop.Ide.ItemProperties.Expense__Tracking__Xamarin.Android AndroidDesignerPreferredTheme="Theme.AppCompat.Light.NoActionBar" PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

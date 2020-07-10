@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "nS0xTnLZA3gjmiWlJMtqHoVplaq56DUnFmr2DKo2kZkqu8PzaFerPZ0gw9VYM3a5D4Q6YCAKis3+6zAmDcbGjA==",
+  "dgSpecHash": "gVbH4jpsJeOxQz/ZKvkaTzUOP+iXCIIjiYa1Ad/7u79jJ0ygcUUpmowQ5R4+J9g6kiQPN2956JGTjeq6nJ+BUg==",
   "success": true,
-  "projectFilePath": "/Users/kk37/Desktop/Expense Tracking/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin.Android/Expense_Tracking_Xamarin.Android.csproj",
+  "projectFilePath": "/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.Android/Expense_Tracking_Xamarin.Android.csproj",
   "expectedPackageFiles": [
+    "/Users/kk37/.nuget/packages/microsoft.bcl/1.1.10/microsoft.bcl.1.1.10.nupkg.sha512",
+    "/Users/kk37/.nuget/packages/microsoft.bcl.build/1.0.14/microsoft.bcl.build.1.0.14.nupkg.sha512",
+    "/Users/kk37/.nuget/packages/microsoft.net.http/2.2.29/microsoft.net.http.2.2.29.nupkg.sha512",
     "/Users/kk37/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
     "/Users/kk37/.nuget/packages/xamarin.android.arch.core.common/1.1.1.3/xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "/Users/kk37/.nuget/packages/xamarin.android.arch.core.runtime/1.1.1.3/xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",

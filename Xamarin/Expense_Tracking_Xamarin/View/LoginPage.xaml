@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
+             xmlns:local = "clr-namespace:Expense_Tracking_Xamarin"
              x:Class="Expense_Tracking_Xamarin.View.LoginPage">
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <FlexLayout
             AlignContent="Center"
@@ -10,16 +17,16 @@
             JustifyContent="SpaceEvenly">
             <!-- new Controls here -->
             <Image
-                Source="ic_logo"/>
+                Source="{local:ImageResource Expense_Tracking_Xamarin.Images.app_icon.png}"/>
             <Entry
-                x:Name="EmailEntry"
+                Text="{Binding email}"
                 Placeholder="Email"/>
             <Entry
-                x:Name="PasswordEntry"
+                Text="{Binding password}"
                 Placeholder="Password"
                 IsPassword="True"/>
             <Button
-                x:Name="LoginBtn"
+                Command="{Binding Login}"
                 Text="LOGIN"/>
         </FlexLayout>
     </ContentPage.Content>
