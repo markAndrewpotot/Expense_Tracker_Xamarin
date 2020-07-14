@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "0dFibR3lSiV9IQdMp3nRWgz96U95Fc8TDgzUmD4JX9PWrh/GZgBGfFjXloiPSeZK6L5xZvaZ97SsX0WtSIF+Ug==",
+  "dgSpecHash": "F/DY2nIoI3LNAXVBUty4pefbrBpGwK4IqCbxlGD5qK4djeJuCtCvUT0L8MF+0z+HxIsEa6vci6O3BNhm7e7XLA==",
   "success": true,
   "projectFilePath": "/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin.csproj",
   "expectedPackageFiles": [
     "/Users/kk37/.nuget/packages/microsoft.bcl/1.1.10/microsoft.bcl.1.1.10.nupkg.sha512",
     "/Users/kk37/.nuget/packages/microsoft.bcl.build/1.0.14/microsoft.bcl.build.1.0.14.nupkg.sha512",
+    "/Users/kk37/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/kk37/.nuget/packages/microsoft.net.http/2.2.29/microsoft.net.http.2.2.29.nupkg.sha512",
     "/Users/kk37/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",

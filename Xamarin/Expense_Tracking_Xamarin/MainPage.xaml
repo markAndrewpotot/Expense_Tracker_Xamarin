@@ -35,6 +35,7 @@
             Grid.Column="1"
             Grid.Row="4"
             Text="SIGN UP"
+            FontSize="Large"
             HorizontalOptions="FillAndExpand"
             Clicked="SignupBtn_Clicked"/>
         <Label
@@ -43,6 +44,7 @@
             Grid.ColumnSpan="3"
             Grid.Row="5"
             Text="I already have an account"
+            FontSize="12"
             TextColor="Blue"
             TextDecorations="Underline"
             HorizontalOptions="CenterAndExpand"

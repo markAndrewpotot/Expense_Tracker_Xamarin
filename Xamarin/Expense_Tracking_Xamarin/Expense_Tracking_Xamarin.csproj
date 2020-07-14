@@ -15,6 +15,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Microsoft.Net.Http" Version="2.2.29" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\" />
@@ -46,6 +47,7 @@
     <None Remove="Images\ic_logo.png" />
     <None Remove="Images\app_icon.png" />
     <None Remove="Images\empty_icon.png" />
+    <None Remove="Images\ic_menu_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\ic_clothes.png" />
@@ -68,5 +70,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Images\app_icon.png" />
     <EmbeddedResource Include="Images\empty_icon.png" />
+    <EmbeddedResource Include="Images\ic_menu_icon.png" />
   </ItemGroup>
 </Project>

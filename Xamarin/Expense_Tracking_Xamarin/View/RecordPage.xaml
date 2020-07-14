@@ -1,17 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
              x:Class="Expense_Tracking_Xamarin.View.RecordPage"
              Title="Record">
+    <ContentPage.BindingContext>
+        <vm:RecordPageViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        
-
         <StackLayout
             BackgroundColor="LightSeaGreen">
-            <ListView
-                x:Name="recordListView">
-
-            </ListView>
+            <ListView x:Name="EmployeeView"
+            ItemsSource="{Binding Employees}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding DisplayName}" />
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

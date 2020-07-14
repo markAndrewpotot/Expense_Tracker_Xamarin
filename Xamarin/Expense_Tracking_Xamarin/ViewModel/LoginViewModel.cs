@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows.Input;
 using Expense_Tracking_Xamarin.Services;
+using System.IO;
 using Xamarin.Forms;
+
 
 namespace Expense_Tracking_Xamarin.ViewModel
 {
@@ -11,6 +13,13 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
         public string email { get; set; }
         public string password { get; set; }
+        public string message { get; set; }
+
+        public LoginViewModel()
+        {
+            email = "name@domain.com";
+            password = "secret";
+        }
 
         public ICommand Login
         {
@@ -19,7 +28,11 @@ namespace Expense_Tracking_Xamarin.ViewModel
                 return new Command(async () =>
                 {
                     var response = await apiServices.ApiLogin(email, password);
-                    Console.WriteLine($"--> {response}");
+                    //await Application.Current.MainPage.Navigation.PushAsync(new NavigationMasterDetail());
+                    Application.Current.MainPage = new NavigationPage(new NavigationMasterDetail());
+
+                    string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
+                    File.WriteAllText(filename, response);
                 });
             }
         }

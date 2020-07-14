@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Expense_Tracking_Xamarin.View.MasterPage">
+             xmlns:local = "clr-namespace:Expense_Tracking_Xamarin"
+             x:Class="Expense_Tracking_Xamarin.View.MasterPage"
+             IconImageSource="{local:ImageResource Expense_Tracking_Xamarin.Images.ic_menu_icon.png}"
+             Title="Menu">
     <ContentPage.Content>
         <FlexLayout
             Direction="Column"
@@ -9,15 +12,23 @@
             JustifyContent="SpaceEvenly"
             BackgroundColor="#20B2AA">
 
+            <Label/>
             <Button
                 Text="Home"
-                FontSize="Large"/>
+                FontSize="Large"
+                TextColor="LightGreen"
+                x:Name="HomeBtn"/>
             <Button
                 Text="Record"
-                FontSize="Large"/>
+                FontSize="Large"
+                TextColor="LightGreen"
+                x:Name="RecordBtn"/>
             <Button
                 Text="Logout"
-                FontSize="Large"/>
+                FontSize="Large"
+                TextColor="LightGreen"
+                x:Name="LogoutBtn"/>
+            <Label/>
 
         </FlexLayout>
     </ContentPage.Content>

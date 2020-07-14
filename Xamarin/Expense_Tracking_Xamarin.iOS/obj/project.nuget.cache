@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "UpkIP5ddQdNKiGEm+B7LmT04vzb2gSeJy+7A4xRPyDwb06GQUUVDinI0eJXUkGIH85dxKwCbB+jPb0UGG3F5vw==",
+  "dgSpecHash": "p6L9je9fQxP5bjUuRQEIkBD0e1eMI+/JP3SoYyoAj4nCi018oboVd26PX94cPi1kArnLhOebyZHFi6AB0ri8Jw==",
   "success": true,
   "projectFilePath": "/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/Expense_Tracking_Xamarin.iOS.csproj",
   "expectedPackageFiles": [
     "/Users/kk37/.nuget/packages/microsoft.bcl/1.1.10/microsoft.bcl.1.1.10.nupkg.sha512",
     "/Users/kk37/.nuget/packages/microsoft.bcl.build/1.0.14/microsoft.bcl.build.1.0.14.nupkg.sha512",
+    "/Users/kk37/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/kk37/.nuget/packages/microsoft.net.http/2.2.29/microsoft.net.http.2.2.29.nupkg.sha512",
     "/Users/kk37/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
     "/Users/kk37/.nuget/packages/xamarin.essentials/1.5.3.2/xamarin.essentials.1.5.3.2.nupkg.sha512",

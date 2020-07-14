@@ -11,7 +11,8 @@ namespace Expense_Tracking_Xamarin
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new HomePage());
+            MainPage = new NavigationPage(new MainPage());
+            //MainPage = new NewRecordPage();
         }
 
         protected override void OnStart()

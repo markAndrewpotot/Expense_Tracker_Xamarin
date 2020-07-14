@@ -26,8 +26,8 @@
                 Placeholder="Password"
                 IsPassword="True"/>
             <Button
-                Command="{Binding Login}"
-                Text="LOGIN"/>
+                Text="LOGIN"
+                Command="{Binding Login}"/>
         </FlexLayout>
     </ContentPage.Content>
 </ContentPage>
