@@ -209,6 +209,5 @@
 -r=/Users/kk37/.nuget/packages/xamarin.forms/4.7.0.1080/lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll
 -r=/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/Expense_Tracking_Xamarin.dll
 -r=/Users/kk37/.nuget/packages/xamarin.forms/4.7.0.1080/buildTransitive/XCODE11/Xamarin.Forms.Platform.iOS.dll
--r=/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/Mono.Android.dll
 --target-framework=Xamarin.iOS,v1.0
 --root-assembly=/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.iOS.exe

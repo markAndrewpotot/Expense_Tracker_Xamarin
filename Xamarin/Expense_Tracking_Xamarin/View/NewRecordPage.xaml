@@ -58,13 +58,15 @@
                 <Label
                     Text="Category"
                     FontSize="12"/>
-                <Entry
-                    Placeholder="Category"
-                    IsEnabled="False">
-                    <Entry.GestureRecognizers>
-                        
-                    </Entry.GestureRecognizers>
-                </Entry>
+                <Label
+                    Text="Food and Drinks"
+                    FontSize="Large">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding changeCat}"/>
+                    </Label.GestureRecognizers>
+
+                </Label>
             </StackLayout>
         </ContentPage.Content>
 </ContentPage>

@@ -20,15 +20,15 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition Width="300"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
          <!-- Place new controls here -->
         <Image
-            Source="{local:ImageResource Expense_Tracking_Xamarin.Images.app_icon.png}"
+            Source="{local:ImageResource Expense_Tracking_Xamarin.Images.images.app_icon.png}"
             Grid.Column="1"
             Grid.Row="1"
-            HorizontalOptions="Center"
+            HorizontalOptions="CenterAndExpand"
             VerticalOptions="Center"/>
         <Button
             x:Name="SignupBtn"

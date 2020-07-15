@@ -106,10 +106,8 @@
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.dll
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Mono.Android.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.pdb
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.pdb
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Mono.Android.pdb
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/ibtool/_BundleResourceWithLogicalName.items
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/actool/_PartialAppManifest.items
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/actool/_BundleResourceWithLogicalName.items

@@ -1,19 +1,24 @@
 ﻿<Properties StartupConfiguration="{3F13EAA1-ED1A-473E-8865-CA35EDFBD37E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Expense_Tracking_Xamarin/View/RecordPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Expense_Tracking_Xamarin/View/CategoryPage.xaml">
     <Files>
-      <File FileName="Expense_Tracking_Xamarin/View/RecordPage.xaml" Line="13" Column="43" />
+      <File FileName="Expense_Tracking_Xamarin/View/CategoryPage.xaml" Line="21" Column="48" />
+      <File FileName="Expense_Tracking_Xamarin/Models/CategoryModel.cs" Line="8" Column="27" />
+      <File FileName="Expense_Tracking_Xamarin/ViewModel/CategoryViewModel.cs" Line="13" Column="35" />
+      <File FileName="Expense_Tracking_Xamarin/ViewModel/NewRecordViewModel.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Expense_Tracking_Xamarin" expanded="True">
             <Node name="Expense_Tracking_Xamarin" expanded="True">
-              <Node name="Services" expanded="True" />
-              <Node name="View" expanded="True" />
-              <Node name="ViewModel" expanded="True">
-                <Node name="LoginViewModel.cs" selected="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="View" expanded="True">
+                <Node name="CategoryPage.xaml" selected="True" />
+                <Node name="NewRecordPage.xaml" expanded="True" />
               </Node>
+              <Node name="ViewModel" expanded="True" />
             </Node>
+            <Node name="Expense_Tracking_Xamarin.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>

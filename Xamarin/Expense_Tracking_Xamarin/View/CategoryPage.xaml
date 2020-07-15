@@ -1,12 +1,27 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Expense_Tracking_Xamarin.View.CategoryPage">
+             xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
+             xmlns:lc = "clr-namespace:Expense_Tracking_Xamarin"
+             x:Class="Expense_Tracking_Xamarin.View.CategoryPage"
+             Title="Categories">
+    <ContentPage.BindingContext>
+        <vm:CategoryViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <StackLayout>
-            <ListView> 
-               
-            </ListView>
+        <StackLayout
+            Orientation="Vertical">
+           <ListView
+               x:Name="recordView"
+               ItemsSource="{Binding Category}">
+               <ListView.ItemTemplate>
+                   <DataTemplate>
+                      <TextCell
+                          Text="{Binding id}"
+                          Detail="{Binding name}"/>
+                   </DataTemplate>
+               </ListView.ItemTemplate>
+           </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

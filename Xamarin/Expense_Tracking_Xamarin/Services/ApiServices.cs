@@ -40,6 +40,8 @@ namespace Expense_Tracking_Xamarin.Services
             return response.IsSuccessStatusCode;
         }
 
+        public List<RecordClass> RecordClasses { get; set; }
+
         public async Task<List<RecordClass>> GetRecord()
         {
             string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
@@ -48,11 +50,20 @@ namespace Expense_Tracking_Xamarin.Services
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            var result = await client.GetStringAsync("http://expenses.koda.ws/api/v1/records");
+            var response = await client.GetAsync("http://expenses.koda.ws/api/v1/records");
 
-            var record = JsonConvert.DeserializeObject<List<RecordClass>>(result);
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadAsStringAsync();
+                var record = JsonConvert.DeserializeObject<List<RecordClass>>(result);
 
-            return record;
+                RecordClasses = new List<RecordClass>(record);
+
+
+                Console.WriteLine($"Record ---> {RecordClasses}");
+            }
+
+            return null;
 
         }
 
@@ -82,8 +93,7 @@ namespace Expense_Tracking_Xamarin.Services
             var keyValues = new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("email", email),
-                new KeyValuePair<string, string>("password", password),
-                new KeyValuePair<string, string>("grant_type", "password"),
+                new KeyValuePair<string, string>("password", password)
             };
             var request = new HttpRequestMessage(HttpMethod.Post, "http://expenses.koda.ws/api/v1/sign_in")
             {

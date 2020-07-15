@@ -23,6 +23,7 @@
     <Folder Include="ViewModel\" />
     <Folder Include="Services\" />
     <Folder Include="Images\" />
+    <Folder Include="Images\images\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
@@ -30,46 +31,46 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Images\ic_clothes.png" />
-    <None Remove="Images\ic_education.png" />
-    <None Remove="Images\ic_electronics.png" />
-    <None Remove="Images\ic_entertainment.png" />
-    <None Remove="Images\ic_food_drinks.png" />
-    <None Remove="Images\ic_gifts.png" />
-    <None Remove="Images\ic_groceries.png" />
-    <None Remove="Images\ic_healthcare.png" />
-    <None Remove="Images\ic_household.png" />
-    <None Remove="Images\ic_investments.png" />
-    <None Remove="Images\ic_other.png" />
-    <None Remove="Images\ic_rent.png" />
-    <None Remove="Images\ic_transportation.png" />
-    <None Remove="Images\ic_utilities.png" />
-    <None Remove="Images\ic_logo.png" />
-    <None Remove="Images\app_icon.png" />
-    <None Remove="Images\empty_icon.png" />
-    <None Remove="Images\ic_menu_icon.png" />
+    <None Remove="Images\images\app_icon.png" />
+    <None Remove="Images\images\empty_icon.png" />
+    <None Remove="Images\images\ic_clothes.png" />
+    <None Remove="Images\images\ic_education.png" />
+    <None Remove="Images\images\ic_electronics.png" />
+    <None Remove="Images\images\ic_entertainment.png" />
+    <None Remove="Images\images\ic_food_drinks.png" />
+    <None Remove="Images\images\ic_gifts.png" />
+    <None Remove="Images\images\ic_groceries.png" />
+    <None Remove="Images\images\ic_healthcare.png" />
+    <None Remove="Images\images\ic_household.png" />
+    <None Remove="Images\images\ic_investments.png" />
+    <None Remove="Images\images\ic_logo.png" />
+    <None Remove="Images\images\ic_menu_icon.png" />
+    <None Remove="Images\images\ic_other.png" />
+    <None Remove="Images\images\ic_rent.png" />
+    <None Remove="Images\images\ic_transportation.png" />
+    <None Remove="Images\images\ic_utilities.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Images\ic_clothes.png" />
-    <EmbeddedResource Include="Images\ic_education.png" />
-    <EmbeddedResource Include="Images\ic_electronics.png" />
-    <EmbeddedResource Include="Images\ic_entertainment.png" />
-    <EmbeddedResource Include="Images\ic_food_drinks.png" />
-    <EmbeddedResource Include="Images\ic_gifts.png" />
-    <EmbeddedResource Include="Images\ic_groceries.png" />
-    <EmbeddedResource Include="Images\ic_healthcare.png" />
-    <EmbeddedResource Include="Images\ic_household.png" />
-    <EmbeddedResource Include="Images\ic_investments.png" />
-    <EmbeddedResource Include="Images\ic_other.png" />
-    <EmbeddedResource Include="Images\ic_rent.png" />
-    <EmbeddedResource Include="Images\ic_transportation.png" />
-    <EmbeddedResource Include="Images\ic_utilities.png" />
-    <EmbeddedResource Include="Images\ic_logo.png">
+    <EmbeddedResource Include="Images\images\app_icon.png" />
+    <EmbeddedResource Include="Images\images\empty_icon.png" />
+    <EmbeddedResource Include="Images\images\ic_clothes.png" />
+    <EmbeddedResource Include="Images\images\ic_education.png" />
+    <EmbeddedResource Include="Images\images\ic_electronics.png" />
+    <EmbeddedResource Include="Images\images\ic_entertainment.png" />
+    <EmbeddedResource Include="Images\images\ic_food_drinks.png" />
+    <EmbeddedResource Include="Images\images\ic_gifts.png" />
+    <EmbeddedResource Include="Images\images\ic_groceries.png" />
+    <EmbeddedResource Include="Images\images\ic_healthcare.png" />
+    <EmbeddedResource Include="Images\images\ic_household.png" />
+    <EmbeddedResource Include="Images\images\ic_investments.png" />
+    <EmbeddedResource Include="Images\images\ic_logo.png">
       <SubType></SubType>
       <Generator></Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Images\app_icon.png" />
-    <EmbeddedResource Include="Images\empty_icon.png" />
-    <EmbeddedResource Include="Images\ic_menu_icon.png" />
+    <EmbeddedResource Include="Images\images\ic_menu_icon.png" />
+    <EmbeddedResource Include="Images\images\ic_other.png" />
+    <EmbeddedResource Include="Images\images\ic_rent.png" />
+    <EmbeddedResource Include="Images\images\ic_transportation.png" />
+    <EmbeddedResource Include="Images\images\ic_utilities.png" />
   </ItemGroup>
 </Project>

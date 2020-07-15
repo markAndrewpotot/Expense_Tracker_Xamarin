@@ -33,6 +33,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
                     string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
                     File.WriteAllText(filename, response);
+
                 });
             }
         }
