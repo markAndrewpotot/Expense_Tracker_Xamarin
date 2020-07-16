@@ -17,15 +17,10 @@
 /Users/kk37/Desktop/Expense Tracking/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/Expense_Tracking_Xamarin.dll
 /Users/kk37/Desktop/Expense Tracking/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/ref/Expense_Tracking_Xamarin.dll
 /Users/kk37/Desktop/Expense Tracking/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/Expense_Tracking_Xamarin.pdb
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/Expense_Tracking_Xamarin.deps.json
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/Expense_Tracking_Xamarin.dll
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/ref/Expense_Tracking_Xamarin.dll
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/Expense_Tracking_Xamarin.pdb
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/Mono.Android.dll
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/Mono.Android.pdb
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/App.xaml.g.cs
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/View/CategoryPage.xaml.g.cs
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/View/EditRecordPage.xaml.g.cs
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/View/HomePage.xaml.g.cs
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/View/LoginPage.xaml.g.cs
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/View/MasterPage.xaml.g.cs
@@ -35,8 +30,14 @@
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/Expense_Tracking_Xamarin.AssemblyInfoInputs.cache
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/Expense_Tracking_Xamarin.AssemblyInfo.cs
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/Expense_Tracking_Xamarin.csproj.CoreCompileInputs.cache
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/XamlC.stamp
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/Expense_Tracking_Xamarin.csproj.CopyComplete
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/Expense_Tracking_Xamarin.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/ref/Expense_Tracking_Xamarin.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/Expense_Tracking_Xamarin.pdb
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/Expense_Tracking_Xamarin.deps.json
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/Expense_Tracking_Xamarin.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/ref/Expense_Tracking_Xamarin.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/Expense_Tracking_Xamarin.pdb
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/Mono.Android.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/bin/Debug/netstandard2.0/Mono.Android.pdb
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/obj/Debug/netstandard2.0/Expense_Tracking_Xamarin.csproj.CopyComplete

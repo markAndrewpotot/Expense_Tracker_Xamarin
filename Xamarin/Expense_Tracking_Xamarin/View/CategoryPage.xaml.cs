@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-
+using System.Collections.ObjectModel;
+using Expense_Tracking_Xamarin.Models;
+using Expense_Tracking_Xamarin.ViewModel;
 using Xamarin.Forms;
 
 namespace Expense_Tracking_Xamarin.View
@@ -10,6 +11,7 @@ namespace Expense_Tracking_Xamarin.View
         public CategoryPage()
         {
             InitializeComponent();
+            BindingContext = new CategoryViewModel();
         }
     }
 }

@@ -10,7 +10,6 @@ using Xamarin.Forms;
 
 namespace Expense_Tracking_Xamarin.View
 {
-    [DesignTimeVisible(false)]
     public partial class RecordPage : ContentPage
     {
         public RecordPage()

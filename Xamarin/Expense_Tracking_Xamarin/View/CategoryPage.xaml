@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
-             xmlns:lc = "clr-namespace:Expense_Tracking_Xamarin"
              x:Class="Expense_Tracking_Xamarin.View.CategoryPage"
              Title="Categories">
     <ContentPage.BindingContext>
@@ -12,13 +11,28 @@
         <StackLayout
             Orientation="Vertical">
            <ListView
-               x:Name="recordView"
-               ItemsSource="{Binding Category}">
+               ItemsSource="{Binding Category}"
+               SelectionMode="Single"
+               SelectedItem="{Binding category_string}">
                <ListView.ItemTemplate>
                    <DataTemplate>
-                      <TextCell
-                          Text="{Binding id}"
-                          Detail="{Binding name}"/>
+                       <ViewCell>
+                           <StackLayout
+                               Orientation="Vertical">
+                               <StackLayout
+                                   Orientation="Horizontal"
+                                   HorizontalOptions="FillAndExpand">
+                                   <Image
+                                       Source="{Binding icon}"/>
+                                   <Label
+                                       Text="{Binding id}"/>
+                                   <Label
+                                       Text=" : "/>
+                                   <Label
+                                       Text="{Binding name}"/>
+                               </StackLayout>
+                           </StackLayout>
+                       </ViewCell>
                    </DataTemplate>
                </ListView.ItemTemplate>
            </ListView>

@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Expense_Tracking_Xamarin.Models;
 using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace Expense_Tracking_Xamarin.ViewModel
 {
-    public class CategoryViewModel
+    public class CategoryViewModel : INotifyPropertyChanged
     {
         public CategoryViewModel()
         {
@@ -47,6 +49,37 @@ namespace Expense_Tracking_Xamarin.ViewModel
                     });
                 }
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private Models.Category _category_string;
+        public Models.Category category_string
+        {
+            set
+            {
+                if (_category_string == value)
+                    return;
+
+                _category_string = value;
+                OnPropertyChanged(nameof(category_string));
+                HandleSelectedItem();
+            }
+            get
+            {
+                return _category_string;
+            }
+        }
+
+        private void HandleSelectedItem()
+        {
+            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "catName.txt");
+            File.WriteAllText(filename, category_string.name);
+            Application.Current.MainPage.Navigation.PopAsync();
         }
     }
 }

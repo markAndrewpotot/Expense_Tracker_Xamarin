@@ -1,19 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage     xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage     xmlns="http://xamarin.com/schemas/2014/forms"
                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
+                xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel" 
                 x:Class="Expense_Tracking_Xamarin.View.NewRecordPage"
-                 BackgroundColor="LightSeaGreen"
-                 Title="Income">
-       <ContentPage.BindingContext>
+                BackgroundColor="LightSeaGreen"
+                Title="Add Record">
+       <TabbedPage.BindingContext>
            <vm:NewRecordViewModel/>
-       </ContentPage.BindingContext>
+       </TabbedPage.BindingContext>
+    <ContentPage
+        Title="Income"
+        BackgroundColor="LightSeaGreen">
        <ContentPage.ToolbarItems>
            <ToolbarItem
                Text="Add"
                Priority="1"
                Order="Default"
-               Command="{Binding addRecord}"/>
+               Command="{Binding addRecord_income}"/>
        </ContentPage.ToolbarItems>
        <ContentPage.Content>
             <StackLayout
@@ -52,22 +55,97 @@
                         HorizontalOptions="CenterAndExpand"
                         FontSize="12"/>
                         <TimePicker
-                            HorizontalOptions="CenterAndExpand"/>
+                            HorizontalOptions="CenterAndExpand"
+                            Time="{Binding timePicker}"/>
                     </StackLayout>
                 </StackLayout>
                 <Label
                     Text="Category"
                     FontSize="12"/>
-                <Label
-                    Text="Food and Drinks"
-                    FontSize="Large">
-                    <Label.GestureRecognizers>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Entry
+                        x:Name="cat_income"
+                        Text="{Binding category_string}"
+                        IsEnabled="False"
+                        HorizontalOptions="FillAndExpand"
+                        FontSize="Large"/>
+                    <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer
                             Command="{Binding changeCat}"/>
-                    </Label.GestureRecognizers>
-
-                </Label>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
             </StackLayout>
         </ContentPage.Content>
-</ContentPage>
+    </ContentPage>
+    <!-- New Tab-->
+    <ContentPage
+        Title="Expense"
+        BackgroundColor="LightSeaGreen">
+       <ContentPage.ToolbarItems>
+           <ToolbarItem
+               Text="Add"
+               Priority="1"
+               Order="Default"
+               Command="{Binding addRecord_expense}"/>
+       </ContentPage.ToolbarItems>
+       <ContentPage.Content>
+            <StackLayout
+                Margin="0,30,0,0"
+                BackgroundColor="LightSeaGreen">
+                <Label
+                    Text="0"
+                    IsVisible="false"/>
+                <Label
+                    Text="Amount"
+                    FontSize="12"/>
+                <Entry
+                    Placeholder="Amount"
+                    Text="{Binding amount}"/>
+                <Label
+                    Text="Notes"
+                    FontSize="12"/>
+                <Entry
+                    Placeholder="Notes"
+                    Text="{Binding notes}"/>
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label
+                        Text="Date"
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="12"/>
+                        <DatePicker
+                            HorizontalOptions="CenterAndExpand"
+                            Date="{Binding date}"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label
+                        Text="Time"
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="12"/>
+                        <TimePicker
+                            HorizontalOptions="CenterAndExpand"
+                            Time="{Binding timePicker}"/>
+                    </StackLayout>
+                </StackLayout>
+                <Label
+                    Text="Category"
+                    FontSize="12"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Entry
+                        x:Name="cat_expense"
+                        Text="{Binding category_string}"
+                        IsEnabled="False"
+                        HorizontalOptions="FillAndExpand"
+                        FontSize="Large"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding changeCat}"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>
 

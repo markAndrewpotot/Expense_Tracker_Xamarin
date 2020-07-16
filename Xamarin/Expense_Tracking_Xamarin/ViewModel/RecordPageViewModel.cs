@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Expense_Tracking_Xamarin.Models;
+using Expense_Tracking_Xamarin.View;
 using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace Expense_Tracking_Xamarin.ViewModel
 {
-    public class RecordPageViewModel
+    public class RecordPageViewModel : INotifyPropertyChanged
     {
 
         public RecordPageViewModel()
@@ -52,6 +55,32 @@ namespace Expense_Tracking_Xamarin.ViewModel
                     });
                 }
             }
+        }
+        private Record _rec;
+
+        public Record rec_selected
+        { 
+            set
+            {
+                _rec = value;
+                OnPropertyChanged(nameof(rec_selected));
+                HandleSelectedRecord();
+            }
+            get
+            {
+                return _rec;
+            }
+        }
+
+        private void HandleSelectedRecord()
+        {
+            Application.Current.MainPage.Navigation.PushAsync(new EditRecordPage());
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

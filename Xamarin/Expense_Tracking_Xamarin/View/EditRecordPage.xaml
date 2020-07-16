@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Expense_Tracking_Xamarin.View.EditRecordPage">
+
+    <ContentPage
+        Title="Income"
+        BackgroundColor="LightSeaGreen">
+       <ContentPage.ToolbarItems>
+           <ToolbarItem
+               Text="Delete"
+               Priority="1"
+               Order="Default"/>
+           <ToolbarItem
+               Text="Update"
+               Priority="1"
+               Order="Default"/>
+       </ContentPage.ToolbarItems>
+       <ContentPage.Content>
+            <StackLayout
+                Margin="0,30,0,0"
+                BackgroundColor="LightSeaGreen">
+                <Label
+                    Text="0"
+                    IsVisible="false"/>
+                <Label
+                    Text="Amount"
+                    FontSize="12"/>
+                <Entry
+                    Placeholder="Amount"
+                    Text="{Binding amount}"/>
+                <Label
+                    Text="Notes"
+                    FontSize="12"/>
+                <Entry
+                    Placeholder="Notes"
+                    Text="{Binding notes}"/>
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label
+                        Text="Date"
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="12"/>
+                        <DatePicker
+                            HorizontalOptions="CenterAndExpand"
+                            Date="{Binding date}"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label
+                        Text="Time"
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="12"/>
+                        <TimePicker
+                            HorizontalOptions="CenterAndExpand"
+                            Time="{Binding timePicker}"/>
+                    </StackLayout>
+                </StackLayout>
+                <Label
+                    Text="Category"
+                    FontSize="12"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Entry
+                        Text="{Binding category_string}"
+                        IsEnabled="False"
+                        HorizontalOptions="FillAndExpand"
+                        FontSize="Large"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding changeCat}"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <!-- New Tab-->
+</TabbedPage>

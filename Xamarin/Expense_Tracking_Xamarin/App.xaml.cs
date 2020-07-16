@@ -11,20 +11,8 @@ namespace Expense_Tracking_Xamarin
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
-            //MainPage = new NewRecordPage();
-        }
-
-        protected override void OnStart()
-        {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
+            //MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new RecordPage());
         }
     }
 }

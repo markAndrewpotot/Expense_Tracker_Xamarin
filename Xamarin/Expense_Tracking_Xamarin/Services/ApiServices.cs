@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
-using Android.Icu.Text;
 using Expense_Tracking_Xamarin.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Xamarin.Forms;
 
 namespace Expense_Tracking_Xamarin.Services
 {
@@ -42,7 +42,7 @@ namespace Expense_Tracking_Xamarin.Services
 
         public List<RecordClass> RecordClasses { get; set; }
 
-        public async Task<List<RecordClass>> GetRecord()
+        public async Task GetRecord()
         {
             string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
             token = File.ReadAllText(filename);
@@ -58,19 +58,15 @@ namespace Expense_Tracking_Xamarin.Services
                 var record = JsonConvert.DeserializeObject<List<RecordClass>>(result);
 
                 RecordClasses = new List<RecordClass>(record);
-
-
-                Console.WriteLine($"Record ---> {RecordClasses}");
             }
-
-            return null;
-
         }
 
         public async Task AddRecords(double amount, string notes, int record_type, DateTime date, int category_id)
         {
             string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
             token = File.ReadAllText(filename);
+
+            string uri = "http://expenses.koda.ws/api/v1/records";
 
             var client = new HttpClient();
             var model = new AddRecord
@@ -82,10 +78,22 @@ namespace Expense_Tracking_Xamarin.Services
                 category_id = category_id
             };
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",token);
-            var json = JsonConvert.SerializeObject(model);
-            HttpContent content = new StringContent(json);
+
+            string json = JsonConvert.SerializeObject(model);
+
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
             content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            var response = await client.PostAsync("http://expenses.koda.ws/api/v1/records", content);
+
+            var response = await client.PostAsync(uri, content);
+
+            if(response.IsSuccessStatusCode)
+            {
+                await Application.Current.MainPage.Navigation.PopAsync();
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert(null, "Fail", "OK");
+            }
         }
 
         public async Task<string> ApiLogin(string email, string password)
