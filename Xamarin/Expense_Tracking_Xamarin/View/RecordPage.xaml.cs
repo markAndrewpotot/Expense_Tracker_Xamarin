@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.IO;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using Expense_Tracking_Xamarin.Models;
-using Newtonsoft.Json;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Expense_Tracking_Xamarin.View
 {
@@ -16,6 +8,12 @@ namespace Expense_Tracking_Xamarin.View
         {
             InitializeComponent();
         }
-        
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            listview.IsRefreshing = true;
+            listview.BeginRefresh();
+            listview.IsRefreshing = false;
+        }
     }
 }

@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage     xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
+                x:Class="Expense_Tracking_Xamarin.View.RecordEditPage">
+    <TabbedPage.BindingContext>
+        <vm:EditRecordViewModel/>
+    </TabbedPage.BindingContext>
+    <ContentPage
+        Title="Income"
+        BackgroundColor="LightSeaGreen">
+       <ContentPage.ToolbarItems>
+           <ToolbarItem
+               Text="Delete"
+               Command="{Binding delete_this}"
+               Priority="1"
+               Order="Default"/>
+           <ToolbarItem
+               Text="Update"
+               Priority="1"
+               Order="Default"
+               Command="{Binding update_this}"/>
+       </ContentPage.ToolbarItems>
+       <ContentPage.Content>
+            <StackLayout
+                Margin="0,30,0,0"
+                BackgroundColor="LightSeaGreen">
+                <Entry
+                    x:Name="id_label"
+                    Text="{Binding id}"
+                    IsVisible="False"
+                    IsEnabled="False"/>
+                <Entry
+                    x:Name="I_recordtype"
+                    Text="{Binding record_type}"
+                    IsVisible="False"
+                    IsEnabled="False"/>
+                <Entry
+                    x:Name="I_CatID"
+                    Text="{Binding category_id}"
+                    IsVisible="False"
+                    IsEnabled="False"/>
+                <Label
+                    Text="Amount"
+                    FontSize="12"/>
+                <Entry
+                    x:Name="I_amount"
+                    Placeholder="Amount"
+                    Text="{Binding amount}"/>
+                <Label
+                    Text="Notes"
+                    FontSize="12"/>
+                <Entry
+                    x:Name="I_notes"
+                    Placeholder="Notes"
+                    Text="{Binding notes}"/>
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label
+                        Text="Date"
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="12"/>
+                        <DatePicker
+                            HorizontalOptions="CenterAndExpand"
+                            Date="{Binding date}"
+                            x:Name="I_date"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label
+                        Text="Time"
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="12"/>
+                        <TimePicker
+                            x:Name="I_time"
+                            HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+                <Label
+                    Text="Category"
+                    FontSize="12"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Entry
+                        x:Name="cat_income"
+                        Text="{Binding category_string}"
+                        IsEnabled="False"
+                        HorizontalOptions="FillAndExpand"
+                        FontSize="Large"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding changeCat}"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+</TabbedPage>

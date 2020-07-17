@@ -54,7 +54,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.7.0.1080, )"
+              "version": "[4.7.0.1142, )"
             }
           }
         }
@@ -130,7 +130,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.7.0.1080, )"
+              "version": "[4.7.0.1142, )"
             }
           },
           "imports": [

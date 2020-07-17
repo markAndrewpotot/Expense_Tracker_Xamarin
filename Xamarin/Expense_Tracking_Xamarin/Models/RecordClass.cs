@@ -16,22 +16,16 @@ namespace Expense_Tracking_Xamarin.Models
 
     public class Record
     {
-        //[JsonProperty(PropertyName = "id")]
         public int id { get; set; }
 
-        //[JsonProperty(PropertyName = "date")]
         public DateTime date { get; set; }
 
-        //[JsonProperty(PropertyName = "notes")]
         public string notes { get; set; }
 
-        //[JsonProperty(PropertyName = "category")]
         public RecCategory category { get; set; }
 
-        //[JsonProperty(PropertyName = "amount")]
         public float amount { get; set; }
 
-        //[JsonProperty(PropertyName = "record_type")]
         public int record_type { get; set; }
 
         public string newDetail

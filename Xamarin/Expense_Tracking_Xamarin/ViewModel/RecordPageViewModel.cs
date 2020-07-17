@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Windows.Input;
 using Expense_Tracking_Xamarin.Models;
 using Expense_Tracking_Xamarin.View;
 using Newtonsoft.Json;
@@ -14,7 +15,6 @@ namespace Expense_Tracking_Xamarin.ViewModel
 {
     public class RecordPageViewModel : INotifyPropertyChanged
     {
-
         public RecordPageViewModel()
         {
             GetRecords();
@@ -29,13 +29,16 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
         public async void GetRecords()
         {
+            listrecord.Clear();
+            Records.Clear();
+
             string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
             token = File.ReadAllText(filename);
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            var response = await client.GetAsync("http://expenses.koda.ws/api/v1/records");
+            var response = await client.GetAsync("http://expenses.koda.ws/api/v1/records/");
 
             if (response.IsSuccessStatusCode)
             {
@@ -55,15 +58,17 @@ namespace Expense_Tracking_Xamarin.ViewModel
                     });
                 }
             }
+            isbusy = false;
         }
         private Record _rec;
 
-        public Record rec_selected
-        { 
+        public Record EditRec
+        {
             set
             {
+                if (_rec == value)
+                    return;
                 _rec = value;
-                OnPropertyChanged(nameof(rec_selected));
                 HandleSelectedRecord();
             }
             get
@@ -74,13 +79,50 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
         private void HandleSelectedRecord()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new EditRecordPage());
+            Application.Current.MainPage.Navigation.PushAsync(new RecordEditPage()
+            {
+                ID = EditRec.id,
+                date = EditRec.date,
+                notes = EditRec.notes,
+                category = EditRec.category,
+                amount = EditRec.amount,
+                record_type = EditRec.record_type
+            });
         }
 
+        private bool _isbusy;
+
         public event PropertyChangedEventHandler PropertyChanged;
-        void OnPropertyChanged(string propertyName)
+        void OnPropertyChange(string propertyname)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
+        }
+
+        public bool isbusy
+        {
+            set
+            {
+                if (_isbusy == value)
+                    return;
+                _isbusy = value;
+                OnPropertyChange(nameof(isbusy));
+                
+            }
+            get
+            {
+                return _isbusy;
+            }
+        }
+
+        public ICommand refresh
+        {
+            get
+            {
+                return new Command(()=>
+                {
+                    GetRecords();
+                });
+            }
         }
     }
 }

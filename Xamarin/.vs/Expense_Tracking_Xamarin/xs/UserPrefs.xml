@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{3F13EAA1-ED1A-473E-8865-CA35EDFBD37E}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Expense_Tracking_Xamarin/App.xaml.cs">
     <Files>
-      <File FileName="Expense_Tracking_Xamarin/View/EditRecordPage.xaml" Line="28" Column="36" />
-      <File FileName="Expense_Tracking_Xamarin/ViewModel/RecordPageViewModel.cs" Line="59" Column="29" />
-      <File FileName="Expense_Tracking_Xamarin/View/RecordPage.xaml" Line="18" Column="47" />
-      <File FileName="Expense_Tracking_Xamarin/App.xaml.cs" Line="15" Column="1" />
-      <File FileName="Expense_Tracking_Xamarin/ViewModel/CategoryViewModel.cs" Line="60" Column="28" />
+      <File FileName="Expense_Tracking_Xamarin/View/RecordEditPage.xaml" Line="86" Column="55" />
+      <File FileName="Expense_Tracking_Xamarin/ViewModel/EditRecordViewModel.cs" Line="124" Column="6" />
+      <File FileName="Expense_Tracking_Xamarin/View/RecordEditPage.xaml.cs" Line="40" Column="47" />
+      <File FileName="Expense_Tracking_Xamarin/View/RecordPage.xaml" Line="1" Column="1" />
+      <File FileName="Expense_Tracking_Xamarin/View/RecordPage.xaml.cs" Line="16" Column="43" />
+      <File FileName="Expense_Tracking_Xamarin/App.xaml.cs" Line="15" Column="79" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,15 +15,12 @@
             <Node name="Expense_Tracking_Xamarin" expanded="True">
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="View" expanded="True">
-                <Node name="RecordPage.xaml" expanded="True" />
-              </Node>
+              <Node name="View" expanded="True" />
               <Node name="ViewModel" expanded="True" />
               <Node name="App.xaml" expanded="True">
                 <Node name="App.xaml.cs" selected="True" />
               </Node>
             </Node>
-            <Node name="Expense_Tracking_Xamarin.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
