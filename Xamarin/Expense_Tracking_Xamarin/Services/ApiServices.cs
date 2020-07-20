@@ -200,5 +200,27 @@ namespace Expense_Tracking_Xamarin.Services
                 await Application.Current.MainPage.DisplayAlert(null, "Fail", "OK");
             }
         }
+
+        
+        public async void GetOverview()
+        {
+            Overview getOV = new Overview();
+            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
+            token = File.ReadAllText(filename);
+
+            string uri = "http://expenses.koda.ws/api/v1/records/overview";
+
+            var client = new HttpClient();
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await client.GetAsync(uri);
+
+            var result = await response.Content.ReadAsStringAsync();
+
+            getOV = JsonConvert.DeserializeObject<Overview>(result);
+
+            Console.WriteLine($"Income: {getOV.income} \n Expense: {getOV.expenses}");
+        }
     }
 }

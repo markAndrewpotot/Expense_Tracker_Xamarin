@@ -60,9 +60,11 @@
 /Users/kk37/Desktop/Expense Tracking/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.iOS.pdb
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.iOS.exe
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.iOS.pdb
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Microcharts.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/System.Net.Http.Extensions.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/System.Net.Http.Primitives.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/SkiaSharp.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Xamarin.Essentials.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Xamarin.Essentials.pdb
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Core.dll
@@ -120,3 +122,8 @@
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.iOS.csproj.CopyComplete
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.iOS.exe
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.iOS.pdb
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/UltimateXF.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Microcharts.iOS.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Microcharts.Forms.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/SkiaSharp.Views.iOS.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/SkiaSharp.Views.Forms.dll

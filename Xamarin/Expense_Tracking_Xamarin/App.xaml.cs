@@ -1,7 +1,5 @@
-﻿using System;
-using Expense_Tracking_Xamarin.View;
+﻿using Expense_Tracking_Xamarin.View;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Expense_Tracking_Xamarin
 {
@@ -12,7 +10,7 @@ namespace Expense_Tracking_Xamarin
             InitializeComponent();
 
             //MainPage = new NavigationPage(new MainPage());
-            //MainPage = new NavigationPage(new RecordPage()); //for debugging
+            MainPage = new NavigationPage(new HomePage()); //for debugging
         }
     }
 }

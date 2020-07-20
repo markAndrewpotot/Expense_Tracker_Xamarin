@@ -2,11 +2,11 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
-             xmlns:local = "clr-namespace:Expense_Tracking_Xamarin"
+             xmlns:form="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
              x:Class="Expense_Tracking_Xamarin.View.HomePage"
              Title="Home">
     <ContentPage.BindingContext>
-       <vm:HomePageViewModel/>
+        <vm:HomePageViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
         <ToolbarItem
@@ -16,41 +16,48 @@
             Command="{Binding StartTracking}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <Grid
-        BackgroundColor="LightSeaGreen">
-        <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition Height="20"/>
-            <RowDefinition />
-            <RowDefinition Height="60"/>
-            <RowDefinition />
-
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition Width="300"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-            <Image
-                Source="{local:ImageResource Expense_Tracking_Xamarin.Images.empty_icon.png}"
-                VerticalOptions="FillAndExpand"
-                Grid.Column="1"
-                Grid.Row="2"/>
-            <Label
-                Text="There are no records yet"
-                HorizontalOptions="Center"
-                FontSize="Small"
-                Grid.Column="1"
-                Grid.Row="3"/>
-            <Button
-                Text="Start Tracking"
-                FontSize="Large"
-                Grid.Column="1"
-                Grid.Row="5"
-                Command="{Binding StartTracking}"/>
-
-        </Grid>
+        <StackLayout Margin="0,10,0,0">
+            <Frame BorderColor="Gray"
+                   CornerRadius="5"
+                   Padding="8"
+                   HeightRequest="200">
+                 <StackLayout HorizontalOptions="FillAndExpand">
+                     <Label Text="Overview" FontSize="Large"/>
+                     <form:ChartView
+                         x:Name="charts"
+                         VerticalOptions="FillAndExpand"></form:ChartView>
+                </StackLayout>  
+            </Frame>
+            <Frame BorderColor="Gray"
+                   CornerRadius="5"
+                   Padding="8">
+                <ListView
+                    x:Name="listview"
+                   ItemsSource="{Binding Records}"
+                   SelectedItem="{Binding EditRec}"
+                   SelectionMode="Single">
+                    <ListView.ItemTemplate>
+                       <DataTemplate>
+                           <ViewCell>
+                               <StackLayout
+                                   Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                    <Image/>
+                                   <StackLayout
+                                       Orientation="Vertical">
+                                       <Label Text="{Binding amount}" FontSize="15" HorizontalOptions="Fill"/>
+                                       <StackLayout
+                                           Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                               <Label Text="{Binding newDetail}" FontSize="10" HorizontalOptions="Fill" />
+                                               <Label Text=" : " FontSize="9" HorizontalOptions="Fill" />
+                                               <Label Text="{Binding date}" FontSize="10" HorizontalOptions="Fill" />
+                                       </StackLayout>
+                                    </StackLayout>
+                               </StackLayout>
+                           </ViewCell>
+                       </DataTemplate>
+                   </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

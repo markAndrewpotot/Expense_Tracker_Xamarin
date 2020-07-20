@@ -26,5 +26,15 @@
 /Users/kk37/.nuget/packages/xamarin.forms/4.7.0.1142/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll
 /Users/kk37/.nuget/packages/xamarin.essentials/1.5.3.2/lib/xamarinios10/Xamarin.Essentials.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/13.18.2.1/lib/mono/Xamarin.iOS/OpenTK-1.0.dll
+/Users/kk37/.nuget/packages/microcharts/0.7.1/lib/Xamarin.iOS10/Microcharts.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/13.18.2.1/lib/mono/Xamarin.iOS/Facades/System.Runtime.dll
+/Users/kk37/.nuget/packages/skiasharp/1.59.1/lib/XamariniOS/SkiaSharp.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/13.18.2.1/lib/mono/Xamarin.iOS/Facades/System.Collections.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/13.18.2.1/lib/mono/Xamarin.iOS/Facades/System.ValueTuple.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/13.18.2.1/lib/mono/Xamarin.iOS/Facades/System.Runtime.Extensions.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/13.18.2.1/lib/mono/Xamarin.iOS/Facades/System.Linq.dll
+/Users/kk37/.nuget/packages/microcharts.forms/0.7.1/lib/netstandard1.4/Microcharts.Forms.dll
+/Users/kk37/.nuget/packages/skiasharp.views.forms/1.59.1.1/lib/XamariniOS/SkiaSharp.Views.Forms.dll
+/Users/kk37/.nuget/packages/skiasharp.views/1.59.1.1/lib/XamariniOS/SkiaSharp.Views.iOS.dll
 /Users/kk37/.nuget/packages/newtonsoft.json/12.0.3/lib/netstandard2.0/Newtonsoft.Json.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/13.18.2.1/lib/mono/Xamarin.iOS/Microsoft.CSharp.dll
