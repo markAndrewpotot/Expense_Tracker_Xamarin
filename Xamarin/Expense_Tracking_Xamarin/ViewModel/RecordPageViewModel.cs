@@ -32,6 +32,9 @@ namespace Expense_Tracking_Xamarin.ViewModel
             listrecord.Clear();
             Records.Clear();
 
+            string textColor = string.Empty;
+            string icon = string.Empty;
+
             string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
             token = File.ReadAllText(filename);
 
@@ -47,6 +50,13 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
                 for (int i = 0; i < record.records.Count; i++)
                 {
+                    if (record.records[i].record_type == 1)
+                        textColor = "Red";
+                    else
+                        textColor = "Green";
+
+                    icon = GetIconString(record.records[i].category.name);
+
                     listrecord.Add(new Record
                     {
                         notes = record.records[i].notes,
@@ -54,11 +64,66 @@ namespace Expense_Tracking_Xamarin.ViewModel
                         category = record.records[i].category,
                         date = record.records[i].date,
                         record_type = record.records[i].record_type,
-                        id = record.records[i].id
-                    });
+                        id = record.records[i].id,
+                        txtcolor = textColor,
+                        iconstring = icon
+                    }) ; 
                 }
             }
             isbusy = false;
+        }
+
+        public string GetIconString(string name)
+        {
+            string retval = string.Empty;
+
+            switch(name)
+            {
+                case "Food & Drinks":
+                    retval = "ic_food_drinks.png";
+                    break;
+                case "Groceries":
+                    retval = "ic_groceries.png";
+                    break;
+                case "Clothes":
+                    retval = "ic_clothes.png";
+                    break;
+                case "Electronics":
+                    retval = "ic_electronics.png";
+                    break;
+                case "Healthcare":
+                    retval = "ic_healthcare.png";
+                    break;
+                case "Gifts":
+                    retval = "ic_gifts.png";
+                    break;
+                case "Transportation":
+                    retval = "ic_transportation.png";
+                    break;
+                case "Education":
+                    retval = "ic_education.png";
+                    break;
+                case "Entertainment":
+                    retval = "ic_entertainment.png";
+                    break;
+                case "Utilities":
+                    retval = "ic_utilities.png";
+                    break;
+                case "Rent":
+                    retval = "ic_rent.png";
+                    break;
+                case "Household Supplies":
+                    retval = "ic_household.png";
+                    break;
+                case "Investments":
+                    retval = "ic_Investment.png";
+                    break;
+                case "Other":
+                    retval = "ic_other.png";
+                    break;
+            }
+
+            return retval;
         }
         private Record _rec;
 

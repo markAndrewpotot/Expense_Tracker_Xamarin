@@ -20,22 +20,8 @@
            SelectionMode="Single">
            <ListView.ItemTemplate>
                <DataTemplate>
-                   <ViewCell>
-                       <StackLayout
-                           Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                            <Image/>
-                           <StackLayout
-                               Orientation="Vertical">
-                               <Label Text="{Binding amount}" FontSize="15" HorizontalOptions="Fill"/>
-                               <StackLayout
-                                   Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                       <Label Text="{Binding newDetail}" FontSize="10" HorizontalOptions="Fill" />
-                                       <Label Text=" : " FontSize="9" HorizontalOptions="Fill" />
-                                       <Label Text="{Binding date}" FontSize="10" HorizontalOptions="Fill" />
-                               </StackLayout>
-                            </StackLayout>
-                       </StackLayout>
-                   </ViewCell>
+                   <ImageCell
+                       Text="{Binding amount}" Detail="{Binding newDetail}" ImageSource="{Binding iconstring}" TextColor="{Binding txtcolor}"/>
                </DataTemplate>
            </ListView.ItemTemplate>
        </ListView>

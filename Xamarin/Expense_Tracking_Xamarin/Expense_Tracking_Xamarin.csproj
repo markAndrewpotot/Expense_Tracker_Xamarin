@@ -24,55 +24,10 @@
     <Folder Include="Models\" />
     <Folder Include="ViewModel\" />
     <Folder Include="Services\" />
-    <Folder Include="Images\" />
-    <Folder Include="Images\images\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android">
       <HintPath>..\..\..\..\..\..\Library\Frameworks\Xamarin.Android.framework\Versions\10.3.1.4\lib\xamarin.android\xbuild-frameworks\MonoAndroid\v9.0\Mono.Android.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Images\images\app_icon.png" />
-    <None Remove="Images\images\empty_icon.png" />
-    <None Remove="Images\images\ic_clothes.png" />
-    <None Remove="Images\images\ic_education.png" />
-    <None Remove="Images\images\ic_electronics.png" />
-    <None Remove="Images\images\ic_entertainment.png" />
-    <None Remove="Images\images\ic_food_drinks.png" />
-    <None Remove="Images\images\ic_gifts.png" />
-    <None Remove="Images\images\ic_groceries.png" />
-    <None Remove="Images\images\ic_healthcare.png" />
-    <None Remove="Images\images\ic_household.png" />
-    <None Remove="Images\images\ic_investments.png" />
-    <None Remove="Images\images\ic_logo.png" />
-    <None Remove="Images\images\ic_menu_icon.png" />
-    <None Remove="Images\images\ic_other.png" />
-    <None Remove="Images\images\ic_rent.png" />
-    <None Remove="Images\images\ic_transportation.png" />
-    <None Remove="Images\images\ic_utilities.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Images\images\app_icon.png" />
-    <EmbeddedResource Include="Images\images\empty_icon.png" />
-    <EmbeddedResource Include="Images\images\ic_clothes.png" />
-    <EmbeddedResource Include="Images\images\ic_education.png" />
-    <EmbeddedResource Include="Images\images\ic_electronics.png" />
-    <EmbeddedResource Include="Images\images\ic_entertainment.png" />
-    <EmbeddedResource Include="Images\images\ic_food_drinks.png" />
-    <EmbeddedResource Include="Images\images\ic_gifts.png" />
-    <EmbeddedResource Include="Images\images\ic_groceries.png" />
-    <EmbeddedResource Include="Images\images\ic_healthcare.png" />
-    <EmbeddedResource Include="Images\images\ic_household.png" />
-    <EmbeddedResource Include="Images\images\ic_investments.png" />
-    <EmbeddedResource Include="Images\images\ic_logo.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Images\images\ic_menu_icon.png" />
-    <EmbeddedResource Include="Images\images\ic_other.png" />
-    <EmbeddedResource Include="Images\images\ic_rent.png" />
-    <EmbeddedResource Include="Images\images\ic_transportation.png" />
-    <EmbeddedResource Include="Images\images\ic_utilities.png" />
   </ItemGroup>
 </Project>

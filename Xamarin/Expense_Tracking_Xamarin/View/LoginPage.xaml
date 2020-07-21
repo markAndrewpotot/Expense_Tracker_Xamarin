@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
-             xmlns:local = "clr-namespace:Expense_Tracking_Xamarin"
-             x:Class="Expense_Tracking_Xamarin.View.LoginPage">
+             x:Class="Expense_Tracking_Xamarin.View.LoginPage"
+             Title="Sign In">
 
     <ContentPage.BindingContext>
         <vm:LoginViewModel/>
@@ -17,7 +17,7 @@
             JustifyContent="SpaceEvenly">
             <!-- new Controls here -->
             <Image
-                Source="{local:ImageResource Expense_Tracking_Xamarin.Images.app_icon.png}"/>
+                Source="app_icon.png"/>
             <Entry
                 Text="{Binding email}"
                 Placeholder="Email"/>

@@ -28,12 +28,11 @@ namespace Expense_Tracking_Xamarin.ViewModel
                 return new Command(async () =>
                 {
                     var response = await apiServices.ApiLogin(email, password);
-                    //await Application.Current.MainPage.Navigation.PushAsync(new NavigationMasterDetail());
-                    Application.Current.MainPage = new NavigationPage(new NavigationMasterDetail());
 
-                    string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
-                    File.WriteAllText(filename, response);
-
+                    if (response)
+                    {
+                        Application.Current.MainPage = new NavigationPage(new NavigationMasterDetail());
+                    }
                 });
             }
         }

@@ -31,32 +31,27 @@
             <Frame BorderColor="Gray"
                    CornerRadius="5"
                    Padding="8">
-                <ListView
+                <StackLayout>
+                    <Label Text="Records" FontSize="Large"/>
+                    <ListView
                     x:Name="listview"
                    ItemsSource="{Binding Records}"
                    SelectedItem="{Binding EditRec}"
+                    IsRefreshing="{Binding isbusy}"
+                    IsPullToRefreshEnabled="True"
+                    RefreshCommand="{Binding refresh}"
                    SelectionMode="Single">
                     <ListView.ItemTemplate>
                        <DataTemplate>
-                           <ViewCell>
-                               <StackLayout
-                                   Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                    <Image/>
-                                   <StackLayout
-                                       Orientation="Vertical">
-                                       <Label Text="{Binding amount}" FontSize="15" HorizontalOptions="Fill"/>
-                                       <StackLayout
-                                           Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                                               <Label Text="{Binding newDetail}" FontSize="10" HorizontalOptions="Fill" />
-                                               <Label Text=" : " FontSize="9" HorizontalOptions="Fill" />
-                                               <Label Text="{Binding date}" FontSize="10" HorizontalOptions="Fill" />
-                                       </StackLayout>
-                                    </StackLayout>
-                               </StackLayout>
-                           </ViewCell>
+                           <ImageCell
+                               Text="{Binding amount}"
+                               TextColor="{Binding txtcolor}"
+                               Detail="{Binding newDetail}"
+                               ImageSource="{Binding iconstring}"/>
                        </DataTemplate>
                    </ListView.ItemTemplate>
                 </ListView>
+                </StackLayout>
             </Frame>
         </StackLayout>
     </ContentPage.Content>

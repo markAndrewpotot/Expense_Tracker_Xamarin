@@ -16,23 +16,7 @@
                SelectedItem="{Binding category_string}">
                <ListView.ItemTemplate>
                    <DataTemplate>
-                       <ViewCell>
-                           <StackLayout
-                               Orientation="Vertical">
-                               <StackLayout
-                                   Orientation="Horizontal"
-                                   HorizontalOptions="FillAndExpand">
-                                   <Image
-                                       Source="{Binding icon}"/>
-                                   <Label
-                                       Text="{Binding id}"/>
-                                   <Label
-                                       Text=" : "/>
-                                   <Label
-                                       Text="{Binding name}"/>
-                               </StackLayout>
-                           </StackLayout>
-                       </ViewCell>
+                       <ImageCell Text="{Binding name}" ImageSource="{Binding icon}"/>
                    </DataTemplate>
                </ListView.ItemTemplate>
            </ListView>

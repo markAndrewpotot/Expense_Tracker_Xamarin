@@ -4,6 +4,7 @@ using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Expense_Tracking_Xamarin.Models;
+using Expense_Tracking_Xamarin.ViewModel;
 using Microcharts;
 using Newtonsoft.Json;
 using SkiaSharp;
@@ -47,13 +48,13 @@ namespace Expense_Tracking_Xamarin.View
             {
                 new Entry(getOV.income)
                 {
-                    Color=SKColor.Parse("#FF1943"),
+                    Color=SKColor.Parse("#008000"),
                     Label ="Income",
                     ValueLabel = $"{getOV.income}"
                 },
                 new Entry(getOV.expenses)
                 {
-                    Color=SKColor.Parse("00BFFF"),
+                    Color=SKColor.Parse("#FF0000"),
                     Label ="Expense",
                     ValueLabel = $"{getOV.expenses}"
                 }
@@ -68,9 +69,7 @@ namespace Expense_Tracking_Xamarin.View
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            listview.IsRefreshing = true;
-            listview.BeginRefresh();
-            listview.IsRefreshing = false;
+            getOverview();
         }
     }
 }

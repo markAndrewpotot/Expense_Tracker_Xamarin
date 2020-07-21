@@ -22,9 +22,14 @@ namespace Expense_Tracking_Xamarin.ViewModel
                 {
                     if (password == confirmpassword)
                     {
-
                         var response = await apiServices.Signup(name, email, password);
-                        Application.Current.MainPage = new NavigationMasterDetail();
+
+                        if(response)
+                            Application.Current.MainPage = new NavigationPage(new NavigationMasterDetail());
+                    }
+                    else
+                    {
+                        await Application.Current.MainPage.DisplayAlert(null, "Password Mismatch", "OK");
                     }
                 });
             }

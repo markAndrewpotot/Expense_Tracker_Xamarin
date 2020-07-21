@@ -41,11 +41,19 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
                 for (int i = 0; i < category.categories.Count; i++)
                 {
+                    string ic = string.Empty;
+                    char[] arrays = category.categories[i].icon.ToCharArray();
+
+                    for(int c = 8; c < arrays.Length; c++)
+                    {
+                        ic += arrays[c];
+                    }
+
                     catmodel.Add(new Category
                     {
                         name = category.categories[i].name,
                         id = category.categories[i].id,
-                        icon = category.categories[i].icon
+                        icon = ic//category.categories[i].icon
                     });
                 }
             }

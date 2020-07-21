@@ -102,12 +102,36 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\drawable\images\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Expense_Tracking_Xamarin\Expense_Tracking_Xamarin.csproj">
       <Project>{06D96986-5F08-4705-BA9A-8421FEE4CBEC}</Project>
       <Name>Expense_Tracking_Xamarin</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\drawable\images\app_icon.png" />
+    <EmbeddedResource Include="Resources\drawable\images\empty_icon.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_clothes.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_education.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_electronics.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_entertainment.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_food_drinks.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_gifts.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_groceries.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_healthcare.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_household.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_investments.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_logo.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\drawable\images\ic_menu_icon.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_other.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_rent.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_transportation.png" />
+    <EmbeddedResource Include="Resources\drawable\images\ic_utilities.png" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
