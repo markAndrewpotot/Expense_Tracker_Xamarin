@@ -1,23 +1,23 @@
 ﻿<Properties StartupConfiguration="{3F13EAA1-ED1A-473E-8865-CA35EDFBD37E}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Expense_Tracking_Xamarin/View/HomePage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Expense_Tracking_Xamarin/AssemblyInfo.cs">
     <Files>
-      <File FileName="Expense_Tracking_Xamarin/View/HomePage.xaml" Line="34" Column="30" />
-      <File FileName="Expense_Tracking_Xamarin/View/HomePage.xaml.cs" Line="72" Column="27" />
-      <File FileName="Expense_Tracking_Xamarin/ViewModel/HomePageViewModel.cs" Line="40" Column="39" />
+      <File FileName="Expense_Tracking_Xamarin/View/SignupPage.xaml" Line="43" Column="45" />
+      <File FileName="Expense_Tracking_Xamarin/ViewModel/RegistrationViewModel.cs" Line="40" Column="22" />
+      <File FileName="Expense_Tracking_Xamarin/ViewModel/LoginViewModel.cs" Line="57" Column="10" />
+      <File FileName="Expense_Tracking_Xamarin/View/NewRecordPage.xaml" Line="1" Column="1" />
+      <File FileName="Expense_Tracking_Xamarin/View/MasterPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="Expense_Tracking_Xamarin/AssemblyInfo.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Expense_Tracking_Xamarin" expanded="True">
             <Node name="Expense_Tracking_Xamarin" expanded="True">
-              <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
               <Node name="View" expanded="True">
-                <Node name="HomePage.xaml" expanded="True">
-                  <Node name="HomePage.xaml.cs" selected="True" />
-                </Node>
+                <Node name="MasterPage.xaml" expanded="True" />
               </Node>
               <Node name="ViewModel" expanded="True" />
+              <Node name="AssemblyInfo.cs" selected="True" />
             </Node>
           </Node>
         </State>

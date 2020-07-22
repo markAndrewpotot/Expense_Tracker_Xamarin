@@ -8,12 +8,5 @@ namespace Expense_Tracking_Xamarin.View
         {
             InitializeComponent();
         }
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            listview.IsRefreshing = true;
-            listview.BeginRefresh();
-            listview.IsRefreshing = false;
-        }
     }
 }

@@ -12,6 +12,8 @@ namespace Expense_Tracking_Xamarin.View
         {
             InitializeComponent();
 
+            NavigationPage.SetHasNavigationBar(this, false);
+
             HomeBtn.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.Home);
             RecordBtn.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.Records);
             LogoutBtn.Clicked += (s, e) => PageSelected?.Invoke(this, PageType.Logout);

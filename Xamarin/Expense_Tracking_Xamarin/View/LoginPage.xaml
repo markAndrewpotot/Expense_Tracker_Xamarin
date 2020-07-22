@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
              x:Class="Expense_Tracking_Xamarin.View.LoginPage"
-             Title="Sign In">
+             Title="Sign In"
+             BackgroundColor="#dbf6f3">
 
     <ContentPage.BindingContext>
         <vm:LoginViewModel/>
@@ -11,23 +12,36 @@
 
     <ContentPage.Content>
         <FlexLayout
-            AlignContent="Center"
             Direction="Column"
-            BackgroundColor="LightSeaGreen"
+            AlignContent="Center"
             JustifyContent="SpaceEvenly">
             <!-- new Controls here -->
             <Image
                 Source="app_icon.png"/>
+
             <Entry
                 Text="{Binding email}"
-                Placeholder="Email"/>
+                Placeholder="Email"
+                IsEnabled="{Binding enable}"/>
+
             <Entry
                 Text="{Binding password}"
                 Placeholder="Password"
-                IsPassword="True"/>
+                IsPassword="True"
+                IsEnabled="{Binding enable}"/>
+
             <Button
                 Text="LOGIN"
-                Command="{Binding Login}"/>
+                Command="{Binding Login}"
+                IsEnabled="{Binding enable}"/>
+
+            <ActivityIndicator
+                IsRunning="{Binding loading}"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                AbsoluteLayout.LayoutBounds="0,-5,0,-5"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
+
         </FlexLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -15,27 +15,37 @@
             AlignContent="Center"
             Direction="Column"
             JustifyContent="SpaceEvenly"
-            BackgroundColor="LightSeaGreen">
+            BackgroundColor="#dbf6f3">
             <!-- new controls here -->
             <Image
                 Source="app_icon.png"/>
             <Entry
                 Text="{Binding name}"
-                Placeholder="Name"/>
+                Placeholder="Name"
+                IsEnabled="{Binding enable}"/>
             <Entry
                 Text="{Binding email}"
-                Placeholder="Email"/>
+                Placeholder="Email"
+                IsEnabled="{Binding enable}"/>
             <Entry
                 Text="{Binding password}"
                 Placeholder="Password"
-                IsPassword="True"/>
+                IsPassword="True"
+                IsEnabled="{Binding enable}"/>
             <Entry
                 Text="{Binding confirmpassword}"
                 Placeholder="Confirm Password"
-                IsPassword="True"/>
+                IsPassword="True"
+                IsEnabled="{Binding enable}"/>
             <Button
                 Command="{Binding SignUp}"
-                Text="SIGN UP"/>
+                Text="SIGN UP"
+                IsEnabled="{Binding enable}"/>
+            <ActivityIndicator
+                IsRunning="{Binding loading}"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
         </FlexLayout>
     </ContentPage.Content>
 </ContentPage>

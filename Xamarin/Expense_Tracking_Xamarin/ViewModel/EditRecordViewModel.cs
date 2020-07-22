@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Expense_Tracking_Xamarin.Services;
 using Expense_Tracking_Xamarin.View;
@@ -27,6 +28,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
         public EditRecordViewModel()
         {
+            loading = false;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -42,11 +44,13 @@ namespace Expense_Tracking_Xamarin.ViewModel
             {
                 return new Command(async () =>
                 {
+                    loading = true;
                     await api.DeleteRecord(id);
                 });
             }
         }
-        public ICommand update_this
+
+        public ICommand update_this_income
         {
             get
             {
@@ -54,11 +58,26 @@ namespace Expense_Tracking_Xamarin.ViewModel
                 {
                     category_id = getCat_id(category_string);
 
-                    await api.PatchRecords(id, date, notes, category_id, amount, record_type);
-
+                    loading = true;
+                    await api.PatchRecords(id, date, notes, category_id, amount, 0);
                 });
             }
         }
+
+        public ICommand update_this_expense
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    category_id = getCat_id(category_string);
+
+                    loading = true;
+                    await api.PatchRecords(id, date, notes, category_id, amount, 1);
+                });
+            }
+        }
+
         public ICommand changeCat
         {
             get
@@ -120,6 +139,19 @@ namespace Expense_Tracking_Xamarin.ViewModel
             }
 
             return retval;
+        }
+
+        private bool _loading;
+        public bool loading
+        {
+            get { return _loading; }
+            set
+            {
+                if (_loading == value)
+                    return;
+                _loading = value;
+                OnPropertyChanged(nameof(loading));
+            }
         }
     }
 }

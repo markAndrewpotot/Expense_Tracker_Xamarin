@@ -19,7 +19,7 @@
                Text="Update"
                Priority="1"
                Order="Default"
-               Command="{Binding update_this}"/>
+               Command="{Binding update_this_income}"/>
        </ContentPage.ToolbarItems>
        <ContentPage.Content>
             <StackLayout
@@ -92,6 +92,105 @@
                             Command="{Binding changeCat}"/>
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
+                <ActivityIndicator IsRunning="{Binding loading}"/>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    <!-- New Contentpage -->
+     <ContentPage
+        Title="Expense"
+        BackgroundColor="LightSeaGreen">
+       <ContentPage.ToolbarItems>
+           <ToolbarItem
+               Text="Delete"
+               Command="{Binding delete_this}"
+               Priority="1"
+               Order="Default"/>
+           <ToolbarItem
+               Text="Update"
+               Priority="1"
+               Order="Default"
+               Command="{Binding update_this_expense}"/>
+       </ContentPage.ToolbarItems>
+       <ContentPage.Content>
+            <StackLayout
+                Margin="0,30,0,0"
+                BackgroundColor="LightSeaGreen">
+                <Entry
+                    x:Name="E_id_label"
+                    Text="{Binding id}"
+                    IsVisible="False"
+                    IsEnabled="False"/>
+                <Entry
+                    x:Name="E_recordtype"
+                    Text="{Binding record_type}"
+                    IsVisible="False"
+                    IsEnabled="False"/>
+                <Entry
+                    x:Name="E_CatID"
+                    Text="{Binding category_id}"
+                    IsVisible="False"
+                    IsEnabled="False"/>
+                <Label
+                    Text="Amount"
+                    FontSize="12"/>
+                <Entry
+                    x:Name="E_amount"
+                    Placeholder="Amount"
+                    Text="{Binding amount}"/>
+                <Label
+                    Text="Notes"
+                    FontSize="12"/>
+                <Entry
+                    x:Name="E_notes"
+                    Placeholder="Notes"
+                    Text="{Binding notes}"/>
+               
+                <StackLayout
+                    Orientation="Horizontal"
+                    HorizontalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <Label
+                        Text="Date"
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="12"/>
+                        <DatePicker
+                            HorizontalOptions="CenterAndExpand"
+                            Date="{Binding date}"
+                            x:Name="E_date"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label
+                        Text="Time"
+                        HorizontalOptions="CenterAndExpand"
+                        FontSize="12"/>
+                        <TimePicker
+                            x:Name="E_time"
+                            HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+                <Label
+                    Text="Category"
+                    FontSize="12"/>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Entry
+                        x:Name="cat_expense"
+                        Text="{Binding category_string}"
+                        IsEnabled="False"
+                        HorizontalOptions="FillAndExpand"
+                        FontSize="Large"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command="{Binding changeCat}"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <Label/>
+                 <ActivityIndicator
+                    IsRunning="{Binding loading}"
+                    IsVisible="{Binding loading}"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>

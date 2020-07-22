@@ -1,10 +1,11 @@
-﻿using System.Windows.Input;
+﻿using System.ComponentModel;
+using System.Windows.Input;
 using Expense_Tracking_Xamarin.Services;
 using Xamarin.Forms;
 
 namespace Expense_Tracking_Xamarin.ViewModel
 {
-    public class RegistrationViewModel
+    public class RegistrationViewModel : INotifyPropertyChanged
     {
         public ApiServices apiServices = new ApiServices();
 
@@ -14,6 +15,12 @@ namespace Expense_Tracking_Xamarin.ViewModel
         public string confirmpassword { get; set; }
         public string message { get; set; }
 
+        public RegistrationViewModel()
+        {
+            loading = false;
+            enable = true;
+        }
+
         public ICommand SignUp
         {
             get
@@ -22,16 +29,51 @@ namespace Expense_Tracking_Xamarin.ViewModel
                 {
                     if (password == confirmpassword)
                     {
+                        loading = true;
+                        enable = false;
                         var response = await apiServices.Signup(name, email, password);
 
                         if(response)
-                            Application.Current.MainPage = new NavigationPage(new NavigationMasterDetail());
+                            Application.Current.MainPage = new NavigationPage(new NavigationMasterDetail());                    
                     }
                     else
                     {
                         await Application.Current.MainPage.DisplayAlert(null, "Password Mismatch", "OK");
                     }
                 });
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string propertyname)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
+        }
+
+        private bool _loading;
+        public bool loading
+        {
+            get { return _loading; }
+            set
+            {
+                if (_loading == value)
+                    return;
+                _loading = value;
+                OnPropertyChanged(nameof(loading));
+            }
+        }
+
+        private bool _enable;
+        public bool enable
+        {
+            get { return _enable; }
+            set
+            {
+                if (_enable == value)
+                    return;
+                _enable = value;
+                OnPropertyChanged(nameof(enable));
             }
         }
     }

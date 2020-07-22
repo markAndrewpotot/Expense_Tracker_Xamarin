@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Expense_Tracking_Xamarin.MainPage">
-    <Grid
-        BackgroundColor="LightSeaGreen">
+             x:Class="Expense_Tracking_Xamarin.MainPage"
+             BackgroundColor="#dbf6f3">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
@@ -31,6 +31,7 @@
             Grid.Column="1"
             Grid.Row="4"
             Text="SIGN UP"
+            TextColor="Black"
             FontSize="Large"
             HorizontalOptions="FillAndExpand"
             Clicked="SignupBtn_Clicked"/>
@@ -41,7 +42,7 @@
             Grid.Row="5"
             Text="I already have an account"
             FontSize="12"
-            TextColor="Blue"
+            TextColor="Black"
             TextDecorations="Underline"
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="EndAndExpand">

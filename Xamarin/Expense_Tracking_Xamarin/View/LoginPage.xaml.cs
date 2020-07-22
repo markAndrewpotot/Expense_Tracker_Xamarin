@@ -10,6 +10,7 @@ namespace Expense_Tracking_Xamarin.View
         public LoginPage()
         {
             InitializeComponent();
+            
         }
     }
 }

@@ -53,21 +53,6 @@ namespace Expense_Tracking_Xamarin.Services
 
         public async Task<bool> Signup(string name, string email, string password)
         {
-            string uri = "http://expenses.koda.ws/api/v1/sign_up";
-            /*var client = new HttpClient();
-
-            var model = new Registration
-            {
-                Name = name,
-                Email = email,
-                Password = password
-            };
-            string json = JsonConvert.SerializeObject(model);
-
-            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-            var response = await client.PostAsync(uri, content);*/
             var keyValues = new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("name", name),

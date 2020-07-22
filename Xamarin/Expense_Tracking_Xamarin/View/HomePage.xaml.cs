@@ -23,7 +23,6 @@ namespace Expense_Tracking_Xamarin.View
         public HomePage()
         {
             InitializeComponent();
-
             getOverview();
         }
 

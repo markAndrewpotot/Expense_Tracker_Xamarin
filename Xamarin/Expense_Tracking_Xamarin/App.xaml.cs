@@ -9,8 +9,8 @@ namespace Expense_Tracking_Xamarin
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
-            //MainPage = new NavigationPage(new HomePage()); //for debugging
+            MainPage = new NavigationPage(new MainPage()) { BarBackgroundColor = Color.FromHex("#2e856e") };
+            //MainPage = new NavigationPage(new RecordPage()); //for debugging
         }
     }
 }

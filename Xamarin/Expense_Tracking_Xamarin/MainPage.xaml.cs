@@ -19,6 +19,7 @@ namespace Expense_Tracking_Xamarin
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {

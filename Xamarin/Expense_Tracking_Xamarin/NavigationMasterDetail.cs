@@ -1,5 +1,5 @@
 ﻿using System;
-using Expense_Tracking_Xamarin.Services;
+using System.IO;
 using Expense_Tracking_Xamarin.View;
 using Xamarin.Forms;
 
@@ -10,8 +10,10 @@ namespace Expense_Tracking_Xamarin
         public NavigationMasterDetail()
         {
             var master = new MasterPage();
-            this.Master = master;
-            this.MasterBehavior = MasterBehavior.Popover;
+            Master = master;
+            MasterBehavior = MasterBehavior.Popover;
+
+            NavigationPage.SetHasNavigationBar(this, false);
 
             master.PageSelected += Master_PageSelected;
 
@@ -20,21 +22,25 @@ namespace Expense_Tracking_Xamarin
 
         void PresentDetailPage(PageType pageType)
         {
+            Page page = new Page();
             switch (pageType)
             {
                 case PageType.Home:
-                    this.Detail = new NavigationPage(new HomePage());
+                    page = new NavigationPage(new HomePage());
                     break;
                 case PageType.Logout:
+                    string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
+                    File.WriteAllText(filename, string.Empty);
                     Application.Current.MainPage = new NavigationPage(new MainPage());
                     break;
                 case PageType.Records:
-                    this.Detail = new NavigationPage(new RecordPage());
+                    page = new NavigationPage(new RecordPage());
                     break;
                 default:
-                    this.Detail = new NavigationPage(new HomePage());
+                    page = new NavigationPage(new HomePage());
                     break;
             }
+            Detail = page;
             try
             {
                 IsPresented = false;
