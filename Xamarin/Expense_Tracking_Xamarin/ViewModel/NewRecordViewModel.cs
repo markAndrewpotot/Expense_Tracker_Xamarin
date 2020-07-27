@@ -26,6 +26,8 @@ namespace Expense_Tracking_Xamarin.ViewModel
             date = DateTime.Today;
 
             timePicker = DateTime.Now.TimeOfDay;
+
+            loading = false;
         }
 
         public ICommand addRecord_income
@@ -34,6 +36,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
             {
                 return new Command(async () =>
                 {
+                    loading = true;
                     category_id = getCat_id(category_string);
                     await apiServices.AddRecords(amount, notes, 0, date, category_id);
                 });
@@ -46,6 +49,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
             {
                 return new Command(async () =>
                 {
+                    loading = true;
                     category_id = getCat_id(category_string);
                     await apiServices.AddRecords(amount, notes, 1, date, category_id); 
                 });
@@ -72,6 +76,19 @@ namespace Expense_Tracking_Xamarin.ViewModel
                     return;
                 _catString = value;
                 OnPropertyChanged(category_string);
+            }
+        }
+
+        private bool _loading;
+        public bool loading
+        {
+            get { return _loading; }
+            set
+            {
+                if (_loading == value)
+                    return;
+                _loading = value;
+                OnPropertyChanged(nameof(loading));
             }
         }
         void OnPropertyChanged(string propertyName)

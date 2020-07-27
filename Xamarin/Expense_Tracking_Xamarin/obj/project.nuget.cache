@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DFDrx/Cs53pN63pcehepwt0SdwDNP7Jyudt35X6BnvlNwtazgMvXRBwQ/T/jy7dxpejxMGYcOCGY8jgFvnYSaw==",
+  "dgSpecHash": "43HM207+9ksLQ89vXAQ8KyGuvXutCuZN4v37YSxWKr1l229LKZtBONuCRRVfaWLslIcu9gx32P5JZo5QPQ8wmg==",
   "success": true,
   "projectFilePath": "/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/Expense_Tracking_Xamarin.csproj",
   "expectedPackageFiles": [
@@ -18,7 +18,8 @@
     "/Users/kk37/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
     "/Users/kk37/.nuget/packages/system.valuetuple/4.4.0/system.valuetuple.4.4.0.nupkg.sha512",
     "/Users/kk37/.nuget/packages/xamarin.essentials/1.5.3.2/xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "/Users/kk37/.nuget/packages/xamarin.forms/4.7.0.1142/xamarin.forms.4.7.0.1142.nupkg.sha512"
+    "/Users/kk37/.nuget/packages/xamarin.forms/4.7.0.1142/xamarin.forms.4.7.0.1142.nupkg.sha512",
+    "/Users/kk37/.nuget/packages/xamarin.forms.extended.infinitescrolling/1.0.0-preview2/xamarin.forms.extended.infinitescrolling.1.0.0-preview2.nupkg.sha512"
   ],
   "logs": [
     {

@@ -2,28 +2,64 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
+             xmlns:extended="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
              x:Class="Expense_Tracking_Xamarin.View.RecordPage"
              Title="Record">
     <ContentPage.BindingContext>
-        <vm:RecordPageViewModel>
-        </vm:RecordPageViewModel>
+        <vm:RecordPageViewModel/>
     </ContentPage.BindingContext>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            x:Name="tbi"
+            Text="{Binding searchnot, Mode=TwoWay}"
+            Command="{Binding showSearch}"/>
+    </ContentPage.ToolbarItems>
+    <NavigationPage.TitleView>
+            <SearchBar
+                    x:Name="sb"
+                    Placeholder="Search Record"
+                    HeightRequest="44"
+                    WidthRequest="200"
+                    CancelButtonColor="Black"
+                    IsVisible="{Binding enable, Mode=TwoWay}"
+                    TextChanged="sb_TextChanged"/>
+    </NavigationPage.TitleView>
     <StackLayout
         Orientation="Vertical">
-       <ListView
+            <ListView
            x:Name="listview"
-           ItemsSource="{Binding Records}"
+           ItemsSource="{Binding thisRecord}"
            SelectedItem="{Binding EditRec}"
            IsPullToRefreshEnabled="True"
            IsRefreshing="{Binding isbusy}"
            RefreshCommand="{Binding refresh}"
            SelectionMode="Single">
-           <ListView.ItemTemplate>
-               <DataTemplate>
-                   <ImageCell
-                       Text="{Binding amount}" Detail="{Binding newDetail}" ImageSource="{Binding iconstring}" TextColor="{Binding txtcolor}"/>
-               </DataTemplate>
-           </ListView.ItemTemplate>
+
+                <ListView.Behaviors>
+                    <extended:InfiniteScrollBehavior IsLoadingMore="{Binding load}" />
+                </ListView.Behaviors>
+
+               <ListView.ItemTemplate>
+                   <DataTemplate>
+                       <ImageCell
+                           Text="{Binding amount}"
+                           Detail="{Binding newDetail}"
+                           ImageSource="{Binding iconstring}"
+                           TextColor="{Binding txtcolor}"/>
+                   </DataTemplate>
+               </ListView.ItemTemplate>
+                <ListView.Footer>
+                <Grid Padding="6" IsVisible="{Binding load}">
+                    <!-- set the footer to have a zero height when invisible -->
+                    <Grid.Triggers>
+                        <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                            <Setter Property="HeightRequest" Value="0" />
+                        </Trigger>
+                    </Grid.Triggers>
+                    <!-- the loading content -->
+                    <Label Text="Loading..." TextColor="DeepPink" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+                </Grid>
+            </ListView.Footer>
        </ListView>
     </StackLayout>
 </ContentPage>

@@ -185,12 +185,7 @@
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
                 <Label/>
-                 <ActivityIndicator
-                    IsRunning="{Binding loading}"
-                    IsVisible="{Binding loading}"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                 <ActivityIndicator IsRunning="{Binding loading}"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>

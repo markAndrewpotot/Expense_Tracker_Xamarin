@@ -17,6 +17,7 @@
           "Newtonsoft.Json": "12.0.3",
           "Xamarin.Essentials": "1.5.3.2",
           "Xamarin.Forms": "4.7.0.1142",
+          "Xamarin.Forms.Extended.InfiniteScrolling": "1.0.0-preview2",
           "Mono.Android": "0.0.0.0"
         },
         "runtime": {
@@ -148,6 +149,18 @@
           }
         }
       },
+      "Xamarin.Forms.Extended.InfiniteScrolling/1.0.0-preview2": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "Xamarin.Forms": "4.7.0.1142"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Xamarin.Forms.Extended.InfiniteScrolling.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Mono.Android/0.0.0.0": {
         "runtime": {
           "Mono.Android.dll": {
@@ -268,6 +281,13 @@
       "sha512": "sha512-P/o+VzmgeoFJZ2WoRiar/w0RmkR9WvwAEx6j891Bf31psPjSYjfTI8tGLczFa8LDqdv63pGQNH4hnBoxJjivzg==",
       "path": "xamarin.forms/4.7.0.1142",
       "hashPath": "xamarin.forms.4.7.0.1142.nupkg.sha512"
+    },
+    "Xamarin.Forms.Extended.InfiniteScrolling/1.0.0-preview2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q3MleY9BqDnVKUiXSvYETV++mg70CVXt7h2jqd3etdq5HHrRTYJdjZUdAEBYg5OozfABV7m5QtISU1XheV83XQ==",
+      "path": "xamarin.forms.extended.infinitescrolling/1.0.0-preview2",
+      "hashPath": "xamarin.forms.extended.infinitescrolling.1.0.0-preview2.nupkg.sha512"
     },
     "Mono.Android/0.0.0.0": {
       "type": "reference",

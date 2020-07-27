@@ -16,7 +16,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
     {
         public HomePageViewModel()
         {
-            GetRecords();
+            //GetRecords();
         }
 
         public ICommand StartTracking

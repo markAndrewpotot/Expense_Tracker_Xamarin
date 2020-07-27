@@ -68,6 +68,7 @@ namespace Expense_Tracking_Xamarin.View
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            listview.BeginRefresh();
             getOverview();
         }
     }

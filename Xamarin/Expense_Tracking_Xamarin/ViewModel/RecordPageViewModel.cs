@@ -3,37 +3,89 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Expense_Tracking_Xamarin.Models;
 using Expense_Tracking_Xamarin.View;
 using Newtonsoft.Json;
 using Xamarin.Forms;
+using Xamarin.Forms.Extended;
 
 namespace Expense_Tracking_Xamarin.ViewModel
 {
     public class RecordPageViewModel : INotifyPropertyChanged
     {
+        private string token;
+        private const int PageSize = 10;
+        public RecordClass record;
+        public Pagination pagination;
+        public static ObservableCollection<Record> thislist = new ObservableCollection<Record>();
+        ObservableCollection<Record> listrecord = new ObservableCollection<Record>();
+        ObservableCollection<Record> Records { get => listrecord; set { listrecord = value; OnPropertyChange(nameof(Records)); } }
+
+        public InfiniteScrollCollection<Record> thisRecord { set; get; }
+
+        #region Constructor
         public RecordPageViewModel()
         {
-            GetRecords();
+            searchnot = "Search";
+            enable = false;
+            dispTitle = true;
+            isbusy = false;
+
+            thisRecord = new InfiniteScrollCollection<Record>
+            {
+                OnLoadMore = async () =>
+                {
+                    load = true;
+
+                    // load the next page
+                    var page = thisRecord.Count / PageSize;
+
+                    var items = GetItems(page, PageSize);
+
+                    load = false;
+
+                    // return the items that need to be added
+                    return thisRecord;
+                },
+                OnCanLoadMore = () =>
+                {
+                    return thisRecord.Count < 44;
+                }
+            };
+
+            DownloadDataAsync();
+
         }
-        private string token;
+        #endregion
 
-        public RecordClass record;
+        /*------------------------------------------------------------------------------------------------------------------------------*/
 
-        ObservableCollection<Record> listrecord = new ObservableCollection<Record>();
+        #region On Property Change Implementation
+        public event PropertyChangedEventHandler PropertyChanged;
+        void OnPropertyChange(string propertyname)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
+        }
+        #endregion
 
-        public ObservableCollection<Record> Records { get { return listrecord; } }
+        #region PassRecords()
+        public ObservableCollection<Record> PassRecords()
+        {
+            return thislist;
+        }
+        #endregion
 
-        public async void GetRecords()
+        #region DisplayRecords
+        public async void displayRecords()
         {
             listrecord.Clear();
             Records.Clear();
-
-            string textColor = string.Empty;
-            string icon = string.Empty;
+            thislist.Clear();
 
             string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
             token = File.ReadAllText(filename);
@@ -43,9 +95,37 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
             var response = await client.GetAsync("http://expenses.koda.ws/api/v1/records/");
 
+            var result = await response.Content.ReadAsStringAsync();
+            record = JsonConvert.DeserializeObject<RecordClass>(result);
+
+            pagination = record.pagination;
+
+            for(int i = 1; i <= pagination.pages; i++)
+            {
+                GetRecords(token, i);
+            }
+
+            isbusy = false;
+        }
+        #endregion
+
+        #region Get Records
+        public async void GetRecords(string token, int page)
+        {
+            string textColor = string.Empty;
+            string icon = string.Empty;
+
+            string uri = string.Concat("http://expenses.koda.ws/api/v1/records?page=",page);
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await client.GetAsync(uri);
+
+            var result = await response.Content.ReadAsStringAsync();
+
             if (response.IsSuccessStatusCode)
             {
-                var result = await response.Content.ReadAsStringAsync();
                 record = JsonConvert.DeserializeObject<RecordClass>(result);
 
                 for (int i = 0; i < record.records.Count; i++)
@@ -67,12 +147,25 @@ namespace Expense_Tracking_Xamarin.ViewModel
                         id = record.records[i].id,
                         txtcolor = textColor,
                         iconstring = icon
-                    }) ; 
+                    }) ;
+
+                    thislist.Add(new Record
+                    {
+                        notes = record.records[i].notes,
+                        amount = record.records[i].amount,
+                        category = record.records[i].category,
+                        date = record.records[i].date,
+                        record_type = record.records[i].record_type,
+                        id = record.records[i].id,
+                        txtcolor = textColor,
+                        iconstring = icon
+                    });
                 }
             }
-            isbusy = false;
         }
+        #endregion
 
+        #region Get Icon Using its String
         public string GetIconString(string name)
         {
             string retval = string.Empty;
@@ -125,6 +218,9 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
             return retval;
         }
+        #endregion
+
+        #region Handle On Selection in Listview
         private Record _rec;
 
         public Record EditRec
@@ -155,14 +251,74 @@ namespace Expense_Tracking_Xamarin.ViewModel
             });
         }
 
-        private bool _isbusy;
+        #endregion
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        void OnPropertyChange(string propertyname)
+        #region for title bar, search bar
+        private bool _enable;
+        public bool enable
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyname));
+            get { return _enable; }
+            set
+            {
+                if (_enable == value)
+                    return;
+                _enable = value;
+                OnPropertyChange(nameof(enable));
+            }
         }
 
+        private bool _dispTitle;
+        public bool dispTitle
+        {
+            get { return _dispTitle; }
+            set
+            {
+                if (_dispTitle == value)
+                    return;
+                _dispTitle = value;
+                OnPropertyChange(nameof(dispTitle));
+            }
+        }
+
+        private string _searchnot;
+        public string searchnot
+        {
+            get { return _searchnot; }
+            set
+            {
+                if (_searchnot == value)
+                    return;
+                _searchnot = value;
+                OnPropertyChange(nameof(searchnot));
+            }
+        }
+
+        public ICommand showSearch
+        {
+            get
+            {
+                return new Command(()=>
+                {
+                    if (!enable)
+                    { 
+                        searchnot = "Cancel";
+                        enable = true;
+                        dispTitle = false;
+                    }
+                    else
+                    {
+                        searchnot = "Search";
+                        enable = false;
+                        dispTitle = true;
+                    }
+                });
+            }
+        }
+
+        #endregion
+
+        #region pull to refresh
+        private bool _isbusy;
         public bool isbusy
         {
             set
@@ -185,8 +341,32 @@ namespace Expense_Tracking_Xamarin.ViewModel
             {
                 return new Command(()=>
                 {
-                    GetRecords();
+                    displayRecords();
                 });
+            }
+        }
+        #endregion
+
+        public ObservableCollection<Record> GetItems(int pageIndex, int pageSize)
+        {
+            return (ObservableCollection<Record>)Records.Skip(pageIndex * pageSize).Take(pageSize);
+        }
+
+        private async Task DownloadDataAsync()
+        {
+            var items = GetItems(pageIndex: 0, pageSize: PageSize);
+
+            thisRecord.AddRange(items);
+        }
+
+        private bool _load;
+        public bool load
+        {
+            get =>_load;
+            set
+            {
+                _load = value;
+                OnPropertyChange(nameof(load));
             }
         }
     }

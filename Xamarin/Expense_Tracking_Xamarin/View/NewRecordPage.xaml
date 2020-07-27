@@ -74,6 +74,7 @@
                             Command="{Binding changeCat}"/>
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
+                <ActivityIndicator IsRunning="{Binding loading}" />
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
@@ -144,6 +145,7 @@
                             Command="{Binding changeCat}"/>
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
+                <ActivityIndicator IsRunning="{Binding loading}" />
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
