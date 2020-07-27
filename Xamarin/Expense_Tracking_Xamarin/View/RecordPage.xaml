@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
-             xmlns:extended="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.InfiniteScrolling"
              x:Class="Expense_Tracking_Xamarin.View.RecordPage"
              Title="Record">
     <ContentPage.BindingContext>
@@ -27,17 +26,12 @@
     <StackLayout
         Orientation="Vertical">
             <ListView
-           x:Name="listview"
-           ItemsSource="{Binding thisRecord}"
-           SelectedItem="{Binding EditRec}"
-           IsPullToRefreshEnabled="True"
-           IsRefreshing="{Binding isbusy}"
-           RefreshCommand="{Binding refresh}"
-           SelectionMode="Single">
-
-                <ListView.Behaviors>
-                    <extended:InfiniteScrollBehavior IsLoadingMore="{Binding load}" />
-                </ListView.Behaviors>
+                x:Name="listview"
+                ItemsSource="{Binding Records}"
+                IsPullToRefreshEnabled="True"
+                IsRefreshing="{Binding isbusy}"
+                RefreshCommand="{Binding refresh}"
+                SelectedItem="{Binding EditRec}">
 
                <ListView.ItemTemplate>
                    <DataTemplate>
@@ -48,18 +42,6 @@
                            TextColor="{Binding txtcolor}"/>
                    </DataTemplate>
                </ListView.ItemTemplate>
-                <ListView.Footer>
-                <Grid Padding="6" IsVisible="{Binding load}">
-                    <!-- set the footer to have a zero height when invisible -->
-                    <Grid.Triggers>
-                        <Trigger TargetType="Grid" Property="IsVisible" Value="False">
-                            <Setter Property="HeightRequest" Value="0" />
-                        </Trigger>
-                    </Grid.Triggers>
-                    <!-- the loading content -->
-                    <Label Text="Loading..." TextColor="DeepPink" FontSize="20" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
-                </Grid>
-            </ListView.Footer>
        </ListView>
     </StackLayout>
 </ContentPage>

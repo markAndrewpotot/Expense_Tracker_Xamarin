@@ -1,11 +1,8 @@
 ﻿<Properties StartupConfiguration="{3F13EAA1-ED1A-473E-8865-CA35EDFBD37E}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Expense_Tracking_Xamarin/ViewModel/RecordPageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Expense_Tracking_Xamarin/View/RecordPage.xaml">
     <Files>
-      <File FileName="Expense_Tracking_Xamarin/View/RecordPage.xaml" Line="48" Column="60" />
-      <File FileName="Expense_Tracking_Xamarin/ViewModel/RecordPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="../../../Downloads/Infinite-Scroll-Xamarin-Forms-Demo-master/InfiniteScrollingDemo/InfiniteScrollingDemo/MainPage.xaml" Line="44" Column="31" NotebookId="1" />
-      <File FileName="../../../Downloads/Infinite-Scroll-Xamarin-Forms-Demo-master/InfiniteScrollingDemo/InfiniteScrollingDemo/DataService.cs" Line="22" Column="51" NotebookId="1" />
-      <File FileName="../../../Downloads/Infinite-Scroll-Xamarin-Forms-Demo-master/InfiniteScrollingDemo/InfiniteScrollingDemo/MainViewModel.cs" Line="37" Column="65" NotebookId="1" />
+      <File FileName="Expense_Tracking_Xamarin/View/RecordPage.xaml" Line="13" Column="52" />
+      <File FileName="Expense_Tracking_Xamarin/ViewModel/RecordPageViewModel.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,10 +11,10 @@
             <Node name="Expense_Tracking_Xamarin" expanded="True">
               <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
-              <Node name="View" expanded="True" />
-              <Node name="ViewModel" expanded="True">
-                <Node name="RecordPageViewModel.cs" selected="True" />
+              <Node name="View" expanded="True">
+                <Node name="RecordPage.xaml" selected="True" />
               </Node>
+              <Node name="ViewModel" expanded="True" />
             </Node>
             <Node name="Expense_Tracking_Xamarin.iOS" expanded="True" />
           </Node>

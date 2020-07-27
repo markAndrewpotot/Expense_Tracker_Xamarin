@@ -1,32 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Expense_Tracking_Xamarin.Models;
 using Expense_Tracking_Xamarin.View;
 using Newtonsoft.Json;
 using Xamarin.Forms;
-using Xamarin.Forms.Extended;
 
 namespace Expense_Tracking_Xamarin.ViewModel
 {
     public class RecordPageViewModel : INotifyPropertyChanged
     {
         private string token;
-        private const int PageSize = 10;
         public RecordClass record;
         public Pagination pagination;
         public static ObservableCollection<Record> thislist = new ObservableCollection<Record>();
         ObservableCollection<Record> listrecord = new ObservableCollection<Record>();
-        ObservableCollection<Record> Records { get => listrecord; set { listrecord = value; OnPropertyChange(nameof(Records)); } }
-
-        public InfiniteScrollCollection<Record> thisRecord { set; get; }
+        public ObservableCollection<Record> Records
+        { get => listrecord; set { listrecord = value; OnPropertyChange(nameof(Records)); } }
 
         #region Constructor
         public RecordPageViewModel()
@@ -35,31 +29,6 @@ namespace Expense_Tracking_Xamarin.ViewModel
             enable = false;
             dispTitle = true;
             isbusy = false;
-
-            thisRecord = new InfiniteScrollCollection<Record>
-            {
-                OnLoadMore = async () =>
-                {
-                    load = true;
-
-                    // load the next page
-                    var page = thisRecord.Count / PageSize;
-
-                    var items = GetItems(page, PageSize);
-
-                    load = false;
-
-                    // return the items that need to be added
-                    return thisRecord;
-                },
-                OnCanLoadMore = () =>
-                {
-                    return thisRecord.Count < 44;
-                }
-            };
-
-            DownloadDataAsync();
-
         }
         #endregion
 
@@ -346,28 +315,5 @@ namespace Expense_Tracking_Xamarin.ViewModel
             }
         }
         #endregion
-
-        public ObservableCollection<Record> GetItems(int pageIndex, int pageSize)
-        {
-            return (ObservableCollection<Record>)Records.Skip(pageIndex * pageSize).Take(pageSize);
-        }
-
-        private async Task DownloadDataAsync()
-        {
-            var items = GetItems(pageIndex: 0, pageSize: PageSize);
-
-            thisRecord.AddRange(items);
-        }
-
-        private bool _load;
-        public bool load
-        {
-            get =>_load;
-            set
-            {
-                _load = value;
-                OnPropertyChange(nameof(load));
-            }
-        }
     }
 }
