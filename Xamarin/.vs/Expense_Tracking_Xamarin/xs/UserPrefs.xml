@@ -1,13 +1,11 @@
 ﻿<Properties StartupConfiguration="{3F13EAA1-ED1A-473E-8865-CA35EDFBD37E}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Expense_Tracking_Xamarin.iOS/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Expense_Tracking_Xamarin/ViewModel/RegistrationViewModel.cs">
     <Files>
-      <File FileName="Expense_Tracking_Xamarin/View/RecordPage.xaml" Line="28" Column="44" />
-      <File FileName="Expense_Tracking_Xamarin/ViewModel/RecordPageViewModel.cs" Line="71" Column="30" />
-      <File FileName="Expense_Tracking_Xamarin/View/RecordPage.xaml.cs" Line="68" Column="1" />
-      <File FileName="Expense_Tracking_Xamarin/App.xaml.cs" Line="13" Column="13" />
-      <File FileName="Expense_Tracking_Xamarin/ViewModel/LoginViewModel.cs" />
-      <File FileName="Expense_Tracking_Xamarin/Services/ApiServices.cs" />
-      <File FileName="Expense_Tracking_Xamarin.iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="Expense_Tracking_Xamarin/View/LoginPage.xaml.cs" Line="36" Column="1" />
+      <File FileName="Expense_Tracking_Xamarin/View/SignupPage.xaml.cs" Line="34" Column="10" />
+      <File FileName="Expense_Tracking_Xamarin/MainPage.xaml.cs" Line="53" Column="14" />
+      <File FileName="Expense_Tracking_Xamarin/ViewModel/LoginViewModel.cs" Line="1" Column="1" />
+      <File FileName="Expense_Tracking_Xamarin/ViewModel/RegistrationViewModel.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,14 +14,14 @@
             <Node name="Expense_Tracking_Xamarin" expanded="True">
               <Node name="Services" expanded="True" />
               <Node name="View" expanded="True">
-                <Node name="RecordPage.xaml" expanded="True" />
+                <Node name="SignupPage.xaml" expanded="True" />
               </Node>
-              <Node name="ViewModel" expanded="True" />
-              <Node name="App.xaml" expanded="True" />
+              <Node name="ViewModel" expanded="True">
+                <Node name="RegistrationViewModel.cs" selected="True" />
+              </Node>
+              <Node name="MainPage.xaml" expanded="True" />
             </Node>
-            <Node name="Expense_Tracking_Xamarin.iOS" expanded="True">
-              <Node name="Main.cs" selected="True" />
-            </Node>
+            <Node name="Expense_Tracking_Xamarin.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>

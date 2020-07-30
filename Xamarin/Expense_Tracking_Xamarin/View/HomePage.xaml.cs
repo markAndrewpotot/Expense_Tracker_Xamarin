@@ -85,14 +85,16 @@ namespace Expense_Tracking_Xamarin.View
                 new Entry(getOV.income)
                 {
                     Color=SKColor.Parse("#008000"),
-                    Label ="Income",
-                    ValueLabel = $"{getOV.income}"
+                    Label =$"{getOV.income}",
+                    TextColor = SKColor.Parse("238823")
+                    //ValueLabel = $"{getOV.income}"
                 },
                 new Entry(getOV.expenses)
                 {
                     Color=SKColor.Parse("#FF0000"),
-                    Label ="Expense",
-                    ValueLabel = $"{getOV.expenses}"
+                    Label =$"{getOV.expenses}",
+                    TextColor = SKColor.Parse("D2222d")
+                    //ValueLabel = $"{getOV.expenses}"
                 }
             };
 

@@ -38,7 +38,25 @@ namespace Expense_Tracking_Xamarin
                 await Navigation.PushAsync(new SignupPage());
             else
                 await DisplayAlert("No Internet Access", "Please Check the Network", "OK");
-            
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
+        }
+
+        private async void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        {
+            if(e.NetworkAccess != NetworkAccess.Internet)
+            {
+                await DisplayAlert("","No Internet","OK");
+            }
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            Connectivity.ConnectivityChanged -= Connectivity_ConnectivityChanged;
         }
     }
 }

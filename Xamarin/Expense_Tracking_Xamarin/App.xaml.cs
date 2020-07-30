@@ -9,8 +9,8 @@ namespace Expense_Tracking_Xamarin
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
-            //MainPage = new NavigationPage(new RecordPage()); //for debugging
+            //MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new HomePage()); //for debugging
         }
     }
 }

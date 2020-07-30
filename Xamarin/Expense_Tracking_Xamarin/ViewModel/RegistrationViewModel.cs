@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Windows.Input;
 using Expense_Tracking_Xamarin.Services;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Expense_Tracking_Xamarin.ViewModel
@@ -8,6 +9,8 @@ namespace Expense_Tracking_Xamarin.ViewModel
     public class RegistrationViewModel : INotifyPropertyChanged
     {
         public ApiServices apiServices = new ApiServices();
+
+        public bool response { get; set; }
 
         public string name { get; set; }
         public string email { get; set; }
@@ -27,19 +30,36 @@ namespace Expense_Tracking_Xamarin.ViewModel
             {
                 return new Command(async () =>
                 {
-                    if (password == confirmpassword)
+                    var current = Connectivity.NetworkAccess;
+                    if (current == NetworkAccess.Internet)
                     {
-                        loading = true;
-                        enable = false;
-                        var response = await apiServices.Signup(name, email, password);
+                        if (password == confirmpassword)
+                        {
+                            loading = true;
+                            enable = false;
 
-                        if(response)
-                            Application.Current.MainPage = new NavigationPage(new NavigationMasterDetail());                    
+                            if (name != null && email != null && password != null)
+                            {
+                                response = await apiServices.Signup(name, email, password);
+                            }
+                            else
+                            {
+                                await Application.Current.MainPage.DisplayAlert(null, "Don't leave Empty Entry", "OK");
+                            }
+
+                            if (response)
+                            {
+                                Application.Current.MainPage = new NavigationPage(new NavigationMasterDetail());
+                            }
+                        }
+                        else
+                        {
+                            await Application.Current.MainPage.DisplayAlert(null, "Password Mismatch", "OK");
+                        }
                     }
                     else
-                    {
-                        await Application.Current.MainPage.DisplayAlert(null, "Password Mismatch", "OK");
-                    }
+                        await Application.Current.MainPage.DisplayAlert("No Internet Access", "Please Check the Network", "OK");
+                   
                 });
             }
         }

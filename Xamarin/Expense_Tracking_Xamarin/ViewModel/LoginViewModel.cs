@@ -2,12 +2,15 @@
 using Expense_Tracking_Xamarin.Services;
 using Xamarin.Forms;
 using System.ComponentModel;
+using Xamarin.Essentials;
 
 namespace Expense_Tracking_Xamarin.ViewModel
 {
     public class LoginViewModel : INotifyPropertyChanged
     {
         public ApiServices apiServices = new ApiServices();
+
+        public bool Response { get; set; }
 
         public string email { get; set; }
         public string password { get; set; }
@@ -62,16 +65,32 @@ namespace Expense_Tracking_Xamarin.ViewModel
             {
                 return new Command(async () =>
                 {
-                    loading = true;
-                    enable = false;
-                    var response = await apiServices.ApiLogin(email, password);
-
-                    if (response)
+                    var current = Connectivity.NetworkAccess;
+                    if (current == NetworkAccess.Internet)
                     {
-                        Application.Current.MainPage = new NavigationPage(new NavigationMasterDetail());
+                        loading = true;
+                        enable = false;
+
+                        if(email != null && password != null)
+                        {
+                            Response = await apiServices.ApiLogin(email, password);
+                        }
+                        else
+                        {
+                            await Application.Current.MainPage.DisplayAlert(null, "Don't leave Empty Entry", "OK");
+                        }
+
+
+                        if (Response)
+                        {
+                            Application.Current.MainPage = new NavigationPage(new NavigationMasterDetail());
+                        }
+                        loading = false;
+                        enable = true;
                     }
-                    loading = false;
-                    enable = true;
+                    else
+                        await Application.Current.MainPage.DisplayAlert("No Internet Access", "Please Check the Network", "OK");
+                    
                 });
             }
         }
