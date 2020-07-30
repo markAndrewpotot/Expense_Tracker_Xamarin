@@ -21,11 +21,11 @@
         </Grid.ColumnDefinitions>
          <!-- Place new controls here -->
         <Image
-            Source="app_icon.png"
             Grid.Column="1"
             Grid.Row="1"
             HorizontalOptions="CenterAndExpand"
-            VerticalOptions="Center"/>
+            VerticalOptions="Center"
+            Source="app_icon.png"/>
         <Button
             x:Name="SignupBtn"
             Grid.Column="1"

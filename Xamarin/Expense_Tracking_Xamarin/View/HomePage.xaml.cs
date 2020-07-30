@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using Expense_Tracking_Xamarin.Models;
 using Expense_Tracking_Xamarin.ViewModel;
 using Microcharts;
@@ -18,12 +19,48 @@ namespace Expense_Tracking_Xamarin.View
         private string token;
         public static Overview getOV;
 
+        private HomePageViewModel temp;
+
         List<Entry> entries;
+
+        public int Counter { get; private set; }
 
         public HomePage()
         {
             InitializeComponent();
-            getOverview();
+
+            BindingContext = new HomePageViewModel();
+            temp = BindingContext as HomePageViewModel;
+
+            listview.Refreshing += Listview_Refreshing;
+            listview.ItemAppearing += Listview_ItemAppearing;
+        }
+
+        private async void Listview_ItemAppearing(object sender, ItemVisibilityEventArgs e)
+        {
+            int pages = temp.Pages();
+
+            if (temp.IsBusy || temp.Records.Count == 0)
+                return;
+
+            //hit bottom!
+            if (e.Item == temp.Records[temp.Records.Count - 1])
+            {
+                if (Counter < pages)
+                {
+                    //load here
+                    Counter++;
+                    footer.IsVisible = true;
+                    await Task.Delay(2000);
+                    await temp.PagingRecords(Counter);
+                    footer.IsVisible = false;
+                }
+            }
+        }
+
+        private void Listview_Refreshing(object sender, EventArgs e)
+        {
+            Counter = 1;
         }
 
         private async void getOverview()
@@ -68,6 +105,7 @@ namespace Expense_Tracking_Xamarin.View
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            Counter = 1;
             listview.BeginRefresh();
             getOverview();
         }

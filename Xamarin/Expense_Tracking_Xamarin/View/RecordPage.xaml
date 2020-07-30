@@ -1,18 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:Expense_Tracking_Xamarin.ViewModel"
              x:Class="Expense_Tracking_Xamarin.View.RecordPage"
              Title="Record">
-    <ContentPage.BindingContext>
-        <vm:RecordPageViewModel/>
-    </ContentPage.BindingContext>
     <ContentPage.ToolbarItems>
         <ToolbarItem
             x:Name="tbi"
             Text="{Binding searchnot, Mode=TwoWay}"
             Command="{Binding showSearch}"/>
     </ContentPage.ToolbarItems>
+
     <NavigationPage.TitleView>
             <SearchBar
                     x:Name="sb"
@@ -23,6 +20,7 @@
                     IsVisible="{Binding enable, Mode=TwoWay}"
                     TextChanged="sb_TextChanged"/>
     </NavigationPage.TitleView>
+
     <StackLayout
         Orientation="Vertical">
             <ListView
@@ -31,7 +29,8 @@
                 IsPullToRefreshEnabled="True"
                 IsRefreshing="{Binding isbusy}"
                 RefreshCommand="{Binding refresh}"
-                SelectedItem="{Binding EditRec}">
+                SelectedItem="{Binding EditRec}"
+                ItemAppearing="listview_ItemAppearing">
 
                <ListView.ItemTemplate>
                    <DataTemplate>
@@ -42,6 +41,20 @@
                            TextColor="{Binding txtcolor}"/>
                    </DataTemplate>
                </ListView.ItemTemplate>
-       </ListView>
+
+                <ListView.Footer>
+                    <Grid Padding="6" IsVisible="{Binding IsBusy, Mode=TwoWay}" x:Name="footer">
+                        <!-- set the footer to have a zero height when invisible -->
+                        <Grid.Triggers>
+                            <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                                <Setter Property="HeightRequest" Value="0" />
+                            </Trigger>
+                        </Grid.Triggers>
+                        <!-- the loading content -->
+                        <ActivityIndicator IsRunning="True"/>
+                    </Grid>
+                </ListView.Footer>
+                
+            </ListView>
     </StackLayout>
 </ContentPage>

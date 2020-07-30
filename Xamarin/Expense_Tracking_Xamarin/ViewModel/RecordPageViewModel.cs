@@ -1,14 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Expense_Tracking_Xamarin.Models;
 using Expense_Tracking_Xamarin.View;
 using Newtonsoft.Json;
 using Xamarin.Forms;
+using Xamarin.Forms.Extended;
 
 namespace Expense_Tracking_Xamarin.ViewModel
 {
@@ -17,10 +21,12 @@ namespace Expense_Tracking_Xamarin.ViewModel
         private string token;
         public RecordClass record;
         public Pagination pagination;
-        public static ObservableCollection<Record> thislist = new ObservableCollection<Record>();
+        public ObservableCollection<Record> thislist = new ObservableCollection<Record>();
         ObservableCollection<Record> listrecord = new ObservableCollection<Record>();
         public ObservableCollection<Record> Records
         { get => listrecord; set { listrecord = value; OnPropertyChange(nameof(Records)); } }
+
+        private const int PageSize = 10;
 
         #region Constructor
         public RecordPageViewModel()
@@ -29,6 +35,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
             enable = false;
             dispTitle = true;
             isbusy = false;
+            IsBusy = false;
         }
         #endregion
 
@@ -42,15 +49,25 @@ namespace Expense_Tracking_Xamarin.ViewModel
         }
         #endregion
 
-        #region PassRecords()
+        #region Pass data to code behind
         public ObservableCollection<Record> PassRecords()
         {
-            return thislist;
+            return thislist; // fix this
+        }
+
+        public ObservableCollection<Record> ItemSourceRecord()
+        {
+            return Records;
+        }
+
+        public int Pages()
+        {
+            return pagination.pages;
         }
         #endregion
 
         #region DisplayRecords
-        public async void displayRecords()
+        public async Task displayRecords(int pages)
         {
             listrecord.Clear();
             Records.Clear();
@@ -69,22 +86,84 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
             pagination = record.pagination;
 
-            for(int i = 1; i <= pagination.pages; i++)
+            for(int i = 1; i <= pages; i++)
             {
-                GetRecords(token, i);
+                GetRecords(i);
             }
 
+            thislist.Clear();
+            GetallRecords();
+
             isbusy = false;
+            IsBusy = false;
+        }
+        #endregion
+
+        #region Paging
+        public async Task PagingRecords(int page)
+        {
+            string textColor = string.Empty;
+            string icon = string.Empty;
+
+            string uri = string.Concat("http://expenses.koda.ws/api/v1/records?page=", page);
+
+            isbusy = false;
+
+            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
+            token = File.ReadAllText(filename);
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            var response = await client.GetAsync(uri);
+
+            var result = await response.Content.ReadAsStringAsync();
+
+            if (response.IsSuccessStatusCode)
+            {
+                record = JsonConvert.DeserializeObject<RecordClass>(result);
+
+                for (int i = 0; i < record.records.Count; i++)
+                {
+                    if (record.records[i].record_type == 1)
+                        textColor = "Red";
+                    else
+                        textColor = "Green";
+
+                    icon = GetIconString(record.records[i].category.name);
+
+                    listrecord.Add(new Record
+                    {
+                        notes = record.records[i].notes,
+                        amount = record.records[i].amount,
+                        category = record.records[i].category,
+                        date = record.records[i].date,
+                        record_type = record.records[i].record_type,
+                        id = record.records[i].id,
+                        txtcolor = textColor,
+                        iconstring = icon
+                    });
+                }
+            }
+            IsBusy = false;
         }
         #endregion
 
         #region Get Records
-        public async void GetRecords(string token, int page)
+        public async void GetRecords(int page)
         {
             string textColor = string.Empty;
             string icon = string.Empty;
 
             string uri = string.Concat("http://expenses.koda.ws/api/v1/records?page=",page);
+
+            listrecord.Clear();
+            Records.Clear();
+            thislist.Clear();
+            isbusy = false;
+
+            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
+            token = File.ReadAllText(filename);
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -117,18 +196,6 @@ namespace Expense_Tracking_Xamarin.ViewModel
                         txtcolor = textColor,
                         iconstring = icon
                     }) ;
-
-                    thislist.Add(new Record
-                    {
-                        notes = record.records[i].notes,
-                        amount = record.records[i].amount,
-                        category = record.records[i].category,
-                        date = record.records[i].date,
-                        record_type = record.records[i].record_type,
-                        id = record.records[i].id,
-                        txtcolor = textColor,
-                        iconstring = icon
-                    });
                 }
             }
         }
@@ -273,12 +340,16 @@ namespace Expense_Tracking_Xamarin.ViewModel
                         searchnot = "Cancel";
                         enable = true;
                         dispTitle = false;
+                        //HideSearchListview = true;
+                        //HideListview = false;
                     }
                     else
                     {
                         searchnot = "Search";
                         enable = false;
                         dispTitle = true;
+                        //HideSearchListview = false;
+                        //HideListview = true;
                     }
                 });
             }
@@ -308,12 +379,79 @@ namespace Expense_Tracking_Xamarin.ViewModel
         {
             get
             {
-                return new Command(()=>
+                return new Command(async ()=>
                 {
-                    displayRecords();
+                    await displayRecords(2);
+                    //GetRecords(1);
+
                 });
             }
         }
         #endregion
+
+        private bool _isBusy;
+        public bool IsBusy
+        {
+            get => _isBusy;
+            set
+            {
+                _isBusy = value;
+                OnPropertyChange(nameof(IsBusy));
+            }
+        }
+
+        
+
+        public async void GetallRecords()
+        {
+            RecordClass record;
+            string textColor = string.Empty;
+            string icon = string.Empty;
+
+            thislist.Clear();
+
+            for (int j = 1; j <= pagination.pages; j++)
+            {
+
+                string uri = string.Concat("http://expenses.koda.ws/api/v1/records?page=", j);
+
+                string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
+                token = File.ReadAllText(filename);
+
+                var client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                var response = await client.GetAsync(uri);
+
+                var result = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    record = JsonConvert.DeserializeObject<RecordClass>(result);
+
+                    for (int i = 0; i < record.records.Count; i++)
+                    {
+                        if (record.records[i].record_type == 1)
+                            textColor = "Red";
+                        else
+                            textColor = "Green";
+
+                        icon = GetIconString(record.records[i].category.name);
+
+                        thislist.Add(new Record
+                        {
+                            notes = record.records[i].notes,
+                            amount = record.records[i].amount,
+                            category = record.records[i].category,
+                            date = record.records[i].date,
+                            record_type = record.records[i].record_type,
+                            id = record.records[i].id,
+                            txtcolor = textColor,
+                            iconstring = icon
+                        });
+                    }
+                }
+            }
+        }
     }
 }

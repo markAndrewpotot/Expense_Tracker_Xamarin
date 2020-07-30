@@ -41,16 +41,30 @@
                     IsPullToRefreshEnabled="True"
                     RefreshCommand="{Binding refresh}"
                    SelectionMode="Single">
-                    <ListView.ItemTemplate>
-                       <DataTemplate>
-                           <ImageCell
-                               Text="{Binding amount}"
-                               TextColor="{Binding txtcolor}"
-                               Detail="{Binding newDetail}"
-                               ImageSource="{Binding iconstring}"/>
-                       </DataTemplate>
-                   </ListView.ItemTemplate>
-                </ListView>
+                        <ListView.ItemTemplate>
+                           <DataTemplate>
+                               <ImageCell
+                                   Text="{Binding amount}"
+                                   TextColor="{Binding txtcolor}"
+                                   Detail="{Binding newDetail}"
+                                   ImageSource="{Binding iconstring}"/>
+                           </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.Footer>
+                            <Grid Padding="6" IsVisible="{Binding IsBusy, Mode=TwoWay}" x:Name="footer">
+                                <!-- set the footer to have a zero height when invisible -->
+                                <Grid.Triggers>
+                                    <Trigger TargetType="Grid" Property="IsVisible" Value="False">
+                                        <Setter Property="HeightRequest" Value="0" />
+                                    </Trigger>
+                                </Grid.Triggers>
+                                <!-- the loading content -->
+                                <ActivityIndicator
+                                    IsRunning="True"
+                                    Color="LightSeaGreen"/>
+                            </Grid>
+                        </ListView.Footer>
+                    </ListView>
                 </StackLayout>
             </Frame>
         </StackLayout>

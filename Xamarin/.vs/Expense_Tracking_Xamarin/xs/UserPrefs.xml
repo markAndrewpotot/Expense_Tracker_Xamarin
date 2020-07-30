@@ -1,22 +1,29 @@
 ﻿<Properties StartupConfiguration="{3F13EAA1-ED1A-473E-8865-CA35EDFBD37E}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Expense_Tracking_Xamarin/View/RecordPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Expense_Tracking_Xamarin.iOS/Main.cs">
     <Files>
-      <File FileName="Expense_Tracking_Xamarin/View/RecordPage.xaml" Line="13" Column="52" />
-      <File FileName="Expense_Tracking_Xamarin/ViewModel/RecordPageViewModel.cs" />
+      <File FileName="Expense_Tracking_Xamarin/View/RecordPage.xaml" Line="28" Column="44" />
+      <File FileName="Expense_Tracking_Xamarin/ViewModel/RecordPageViewModel.cs" Line="71" Column="30" />
+      <File FileName="Expense_Tracking_Xamarin/View/RecordPage.xaml.cs" Line="68" Column="1" />
+      <File FileName="Expense_Tracking_Xamarin/App.xaml.cs" Line="13" Column="13" />
+      <File FileName="Expense_Tracking_Xamarin/ViewModel/LoginViewModel.cs" />
+      <File FileName="Expense_Tracking_Xamarin/Services/ApiServices.cs" />
+      <File FileName="Expense_Tracking_Xamarin.iOS/Main.cs" Line="17" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Expense_Tracking_Xamarin" expanded="True">
             <Node name="Expense_Tracking_Xamarin" expanded="True">
-              <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
               <Node name="View" expanded="True">
-                <Node name="RecordPage.xaml" selected="True" />
+                <Node name="RecordPage.xaml" expanded="True" />
               </Node>
               <Node name="ViewModel" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
             </Node>
-            <Node name="Expense_Tracking_Xamarin.iOS" expanded="True" />
+            <Node name="Expense_Tracking_Xamarin.iOS" expanded="True">
+              <Node name="Main.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -27,7 +34,11 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/View/RecordPage.xaml.cs" relfile="Expense_Tracking_Xamarin/View/RecordPage.xaml.cs" line="68" column="1" />
+      <Breakpoint file="/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/View/RecordPage.xaml.cs" relfile="Expense_Tracking_Xamarin/View/RecordPage.xaml.cs" line="66" column="1" />
+      <Breakpoint file="/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin/View/RecordPage.xaml.cs" relfile="Expense_Tracking_Xamarin/View/RecordPage.xaml.cs" line="64" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

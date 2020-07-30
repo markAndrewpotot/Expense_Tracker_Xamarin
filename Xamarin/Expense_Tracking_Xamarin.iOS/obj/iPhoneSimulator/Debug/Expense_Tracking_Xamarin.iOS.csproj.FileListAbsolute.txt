@@ -69,6 +69,10 @@
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/SkiaSharp.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/SkiaSharp.Views.iOS.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/SkiaSharp.Views.Forms.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/System.IO.Compression.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/System.Net.Http.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/System.Security.Cryptography.Encoding.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/System.Security.Cryptography.X509Certificates.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Xamarin.Essentials.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Xamarin.Essentials.pdb
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Core.dll
@@ -110,6 +114,7 @@
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/zh-HK/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll
+/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Extended.InfiniteScrolling.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Platform.iOS.dll
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.pdb
@@ -119,24 +124,6 @@
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/actool/_BundleResourceWithLogicalName.items
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/coremlc/_PartialAppManifest.items
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/coremlc/_BundleResourceWithLogicalName.items
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/app_icon.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/empty_icon.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_clothes.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_education.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_electronics.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_entertainment.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_food_drinks.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_gifts.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_groceries.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_healthcare.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_household.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_investments.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_logo.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_menu_icon.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_other.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_rent.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_transportation.png
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/images/ic_utilities.png
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone 8-13.6/optimized/
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.iOS.csprojAssemblyReference.cache
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.iOS.csproj.CoreCompileInputs.cache
@@ -144,8 +131,3 @@
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.iOS.csproj.CopyComplete
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.iOS.exe
 /Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/obj/iPhoneSimulator/Debug/Expense_Tracking_Xamarin.iOS.pdb
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/System.IO.Compression.dll
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/System.Net.Http.dll
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/System.Security.Cryptography.Encoding.dll
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/System.Security.Cryptography.X509Certificates.dll
-/Users/kk37/Desktop/Expense_Tracker_Xamarin/Xamarin/Expense_Tracking_Xamarin.iOS/bin/iPhoneSimulator/Debug/Xamarin.Forms.Extended.InfiniteScrolling.dll

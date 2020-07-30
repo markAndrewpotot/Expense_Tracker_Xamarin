@@ -153,29 +153,29 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\images\app_icon.png" />
-    <BundleResource Include="Resources\images\empty_icon.png" />
-    <BundleResource Include="Resources\images\ic_clothes.png" />
-    <BundleResource Include="Resources\images\ic_education.png" />
-    <BundleResource Include="Resources\images\ic_electronics.png" />
-    <BundleResource Include="Resources\images\ic_entertainment.png" />
-    <BundleResource Include="Resources\images\ic_food_drinks.png" />
-    <BundleResource Include="Resources\images\ic_gifts.png" />
-    <BundleResource Include="Resources\images\ic_groceries.png" />
-    <BundleResource Include="Resources\images\ic_healthcare.png" />
-    <BundleResource Include="Resources\images\ic_household.png" />
-    <BundleResource Include="Resources\images\ic_investments.png" />
-    <BundleResource Include="Resources\images\ic_logo.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </BundleResource>
-    <BundleResource Include="Resources\images\ic_menu_icon.png" />
-    <BundleResource Include="Resources\images\ic_other.png" />
-    <BundleResource Include="Resources\images\ic_rent.png" />
-    <BundleResource Include="Resources\images\ic_transportation.png" />
-    <BundleResource Include="Resources\images\ic_utilities.png" />
+    <Folder Include="Resources\images\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\images\" />
+    <EmbeddedResource Include="Resources\images\empty_icon.png" />
+    <EmbeddedResource Include="Resources\images\ic_clothes.png" />
+    <EmbeddedResource Include="Resources\images\ic_education.png" />
+    <EmbeddedResource Include="Resources\images\ic_electronics.png" />
+    <EmbeddedResource Include="Resources\images\ic_entertainment.png" />
+    <EmbeddedResource Include="Resources\images\ic_food_drinks.png" />
+    <EmbeddedResource Include="Resources\images\ic_gifts.png" />
+    <EmbeddedResource Include="Resources\images\ic_groceries.png" />
+    <EmbeddedResource Include="Resources\images\ic_healthcare.png" />
+    <EmbeddedResource Include="Resources\images\ic_household.png" />
+    <EmbeddedResource Include="Resources\images\ic_investments.png" />
+    <EmbeddedResource Include="Resources\images\ic_logo.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\images\ic_menu_icon.png" />
+    <EmbeddedResource Include="Resources\images\ic_other.png" />
+    <EmbeddedResource Include="Resources\images\ic_rent.png" />
+    <EmbeddedResource Include="Resources\images\ic_transportation.png" />
+    <EmbeddedResource Include="Resources\images\ic_utilities.png" />
+    <EmbeddedResource Include="Resources\images\app_icon.png" />
   </ItemGroup>
 </Project>
