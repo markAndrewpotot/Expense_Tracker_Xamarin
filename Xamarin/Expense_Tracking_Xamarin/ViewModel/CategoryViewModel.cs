@@ -26,8 +26,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
         public async void GetCategory()
         {
-            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
-            token = File.ReadAllText(filename);
+            token = Xamarin.Essentials.Preferences.Get("token", "");
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -53,7 +52,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
                     {
                         name = category.categories[i].name,
                         id = category.categories[i].id,
-                        icon = ic//category.categories[i].icon
+                        icon = ic
                     });
                 }
             }
@@ -85,8 +84,8 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
         private void HandleSelectedItem()
         {
-            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "catName.txt");
-            File.WriteAllText(filename, category_string.name);
+            Xamarin.Essentials.Preferences.Set("categoryname", category_string.name);
+
             Application.Current.MainPage.Navigation.PopAsync();
         }
     }

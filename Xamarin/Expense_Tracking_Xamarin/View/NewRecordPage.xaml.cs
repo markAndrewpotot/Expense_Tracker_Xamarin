@@ -9,6 +9,8 @@ namespace Expense_Tracking_Xamarin.View
     public partial class NewRecordPage : TabbedPage
     {
         public string token { set; get; }
+        public string category_string { set; get; }
+
         public NewRecordPage()
         {
             InitializeComponent();
@@ -18,8 +20,7 @@ namespace Expense_Tracking_Xamarin.View
         {
             base.OnAppearing();
 
-            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "catName.txt");
-            string category_string = File.ReadAllText(filename);
+            category_string = Xamarin.Essentials.Preferences.Get("categoryname", "");
 
             cat_income.Text = cat_expense.Text = category_string;
         }

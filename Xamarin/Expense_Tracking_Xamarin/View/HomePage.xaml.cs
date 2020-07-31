@@ -9,6 +9,7 @@ using Expense_Tracking_Xamarin.ViewModel;
 using Microcharts;
 using Newtonsoft.Json;
 using SkiaSharp;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Entry = Microcharts.Entry;
 
@@ -65,8 +66,7 @@ namespace Expense_Tracking_Xamarin.View
 
         private async void getOverview()
         {
-            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
-            token = File.ReadAllText(filename);
+            token = Preferences.Get("token", "");
 
             string uri = "http://expenses.koda.ws/api/v1/records/overview";
 
@@ -87,14 +87,12 @@ namespace Expense_Tracking_Xamarin.View
                     Color=SKColor.Parse("#008000"),
                     Label =$"{getOV.income}",
                     TextColor = SKColor.Parse("238823")
-                    //ValueLabel = $"{getOV.income}"
                 },
                 new Entry(getOV.expenses)
                 {
                     Color=SKColor.Parse("#FF0000"),
                     Label =$"{getOV.expenses}",
                     TextColor = SKColor.Parse("D2222d")
-                    //ValueLabel = $"{getOV.expenses}"
                 }
             };
 

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using Expense_Tracking_Xamarin.Models;
 using Expense_Tracking_Xamarin.View;
 using Newtonsoft.Json;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Extended;
 
@@ -25,8 +26,6 @@ namespace Expense_Tracking_Xamarin.ViewModel
         ObservableCollection<Record> listrecord = new ObservableCollection<Record>();
         public ObservableCollection<Record> Records
         { get => listrecord; set { listrecord = value; OnPropertyChange(nameof(Records)); } }
-
-        private const int PageSize = 10;
 
         #region Constructor
         public RecordPageViewModel()
@@ -52,7 +51,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
         #region Pass data to code behind
         public ObservableCollection<Record> PassRecords()
         {
-            return thislist; // fix this
+            return thislist;
         }
 
         public ObservableCollection<Record> ItemSourceRecord()
@@ -73,8 +72,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
             Records.Clear();
             thislist.Clear();
 
-            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
-            token = File.ReadAllText(filename);
+            token = Preferences.Get("token", "");
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -88,7 +86,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
             for(int i = 1; i <= pages; i++)
             {
-                GetRecords(i);
+                GetRecords(i, token);
             }
 
             thislist.Clear();
@@ -109,8 +107,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
             isbusy = false;
 
-            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
-            token = File.ReadAllText(filename);
+            token = Preferences.Get("token", "");
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -150,7 +147,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
         #endregion
 
         #region Get Records
-        public async void GetRecords(int page)
+        public async void GetRecords(int page, string token)
         {
             string textColor = string.Empty;
             string icon = string.Empty;
@@ -161,9 +158,6 @@ namespace Expense_Tracking_Xamarin.ViewModel
             Records.Clear();
             thislist.Clear();
             isbusy = false;
-
-            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
-            token = File.ReadAllText(filename);
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -340,16 +334,12 @@ namespace Expense_Tracking_Xamarin.ViewModel
                         searchnot = "Cancel";
                         enable = true;
                         dispTitle = false;
-                        //HideSearchListview = true;
-                        //HideListview = false;
                     }
                     else
                     {
                         searchnot = "Search";
                         enable = false;
                         dispTitle = true;
-                        //HideSearchListview = false;
-                        //HideListview = true;
                     }
                 });
             }
@@ -382,8 +372,6 @@ namespace Expense_Tracking_Xamarin.ViewModel
                 return new Command(async ()=>
                 {
                     await displayRecords(2);
-                    //GetRecords(1);
-
                 });
             }
         }
@@ -415,8 +403,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
                 string uri = string.Concat("http://expenses.koda.ws/api/v1/records?page=", j);
 
-                string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
-                token = File.ReadAllText(filename);
+                token = Preferences.Get("token", "");
 
                 var client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);

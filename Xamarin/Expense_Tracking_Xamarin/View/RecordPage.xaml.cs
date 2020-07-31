@@ -68,9 +68,6 @@ namespace Expense_Tracking_Xamarin.View
             await temp.displayRecords(2);
 
             listview.ItemsSource = temp.ItemSourceRecord();
-
-            //SearchListview.IsVisible = false;
-            //listview.IsVisible = true;
         }
 
         protected override void OnAppearing()
@@ -83,9 +80,6 @@ namespace Expense_Tracking_Xamarin.View
         void sb_TextChanged(object sender, TextChangedEventArgs e)
         {
             container = temp.PassRecords();
-
-            //SearchListview.IsVisible = true;
-            //listview.IsVisible = false;
 
             if (string.IsNullOrWhiteSpace(e.NewTextValue))
                 listview.ItemsSource = container;

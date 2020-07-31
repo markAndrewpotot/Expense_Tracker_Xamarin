@@ -51,8 +51,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
             listrecord.Clear();
             Records.Clear();
 
-            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
-            token = File.ReadAllText(filename);
+            token = Xamarin.Essentials.Preferences.Get("token", "");
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -204,8 +203,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
             //-------------------------------------------------------------------------------------------------------//
             isbusy = false;
 
-            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
-            token = File.ReadAllText(filename);
+            token = Xamarin.Essentials.Preferences.Get("token","");
             //-------------------------------------------------------------------------------------------------------/*/
 
             var client = new HttpClient();

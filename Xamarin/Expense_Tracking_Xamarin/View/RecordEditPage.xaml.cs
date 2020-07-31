@@ -20,6 +20,8 @@ namespace Expense_Tracking_Xamarin.View
 
         public int record_type { get; set; }
 
+        public string category_string { get; set; }
+
         public RecordEditPage()
         {
             InitializeComponent();
@@ -34,8 +36,8 @@ namespace Expense_Tracking_Xamarin.View
             I_date.Date = E_date.Date = date;
             I_recordtype.Text = E_recordtype.Text = record_type.ToString();
             I_time.Time = E_time.Time = DateTime.Now.TimeOfDay;
-            string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "catName.txt");
-            string category_string = File.ReadAllText(filename);
+
+            category_string = Xamarin.Essentials.Preferences.Get("categoryname","");
 
             cat_income.Text = cat_expense.Text = category_string;
         }

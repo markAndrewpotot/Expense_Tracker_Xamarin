@@ -29,8 +29,7 @@ namespace Expense_Tracking_Xamarin
                     page = new NavigationPage(new HomePage());
                     break;
                 case PageType.Logout:
-                    string filename = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "token.txt");
-                    File.WriteAllText(filename, string.Empty);
+                    Xamarin.Essentials.Preferences.Remove("token");
                     Application.Current.MainPage = new NavigationPage(new MainPage());
                     break;
                 case PageType.Records:

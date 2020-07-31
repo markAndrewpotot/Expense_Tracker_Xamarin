@@ -10,7 +10,7 @@ namespace Expense_Tracking_Xamarin.ViewModel
     {
         public ApiServices apiServices = new ApiServices();
 
-        public bool response { get; set; }
+        public bool Response { get; set; }
 
         public string name { get; set; }
         public string email { get; set; }
@@ -40,14 +40,14 @@ namespace Expense_Tracking_Xamarin.ViewModel
 
                             if (name != null && email != null && password != null)
                             {
-                                response = await apiServices.Signup(name, email, password);
+                                Response = await apiServices.Signup(name, email, password);
                             }
                             else
                             {
                                 await Application.Current.MainPage.DisplayAlert(null, "Don't leave Empty Entry", "OK");
                             }
 
-                            if (response)
+                            if (Response)
                             {
                                 Application.Current.MainPage = new NavigationPage(new NavigationMasterDetail());
                             }
